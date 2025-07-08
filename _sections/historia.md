@@ -35,7 +35,7 @@ Antes de que la psicología se estableciera como una ciencia formal, la gente ya
     </div>
     <div class="card-content">
         <p>Los grandes pensadores como <strong>Platón</strong> usaban comparaciones para explicar nuestros conflictos internos.</p>
-        
+
         <div class="philosophy-example">
             <h4>La Metáfora del Carro de Platón</h4>
             <div class="metaphor-diagram">
@@ -67,7 +67,7 @@ Antes de que la psicología se estableciera como una ciencia formal, la gente ya
     </div>
     <div class="card-content">
         <p>El arte ha sido un vehículo para explorar la mente a través de la creatividad y la expresión.</p>
-        
+
         <div class="artistic-examples">
             <div class="example">
                 <h4>Marcel Proust</h4>
@@ -76,7 +76,7 @@ Antes de que la psicología se estableciera como una ciencia formal, la gente ya
                 </blockquote>
                 <p class="example-note">La memoria involuntaria y los disparadores sensoriales</p>
             </div>
-            
+
             <div class="example">
                 <h4>William S. Burroughs</h4>
                 <blockquote>

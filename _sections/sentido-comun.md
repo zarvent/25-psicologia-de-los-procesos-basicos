@@ -17,19 +17,19 @@ Esta no es una teoría científica, sino **la forma en que todos, en nuestro dí
         <h3>¿Por qué la gente hace lo que hace?</h3>
         <p>Intentamos descifrar las motivaciones detrás de las acciones</p>
     </div>
-    
+
     <div class="question-card">
         <div class="question-icon">💭</div>
         <h3>¿Cómo piensan los demás?</h3>
         <p>Tratamos de entender los procesos mentales de otros</p>
     </div>
-    
+
     <div class="question-card">
         <div class="question-icon">❤️</div>
         <h3>¿Qué sienten?</h3>
         <p>Nos preguntamos sobre las emociones y sentimientos</p>
     </div>
-    
+
     <div class="question-card">
         <div class="question-icon">💬</div>
         <h3>¿Por qué hablan de esa manera?</h3>
@@ -47,7 +47,7 @@ Esta no es una teoría científica, sino **la forma en que todos, en nuestro dí
         </div>
         <p>Utilizamos nuestras vivencias como base para entender a otros</p>
     </div>
-    
+
     <div class="characteristic">
         <div class="characteristic-header">
             <span class="characteristic-icon">🌍</span>
@@ -55,7 +55,7 @@ Esta no es una teoría científica, sino **la forma en que todos, en nuestro dí
         </div>
         <p>Nuestras interpretaciones reflejan el contexto cultural en el que vivimos</p>
     </div>
-    
+
     <div class="characteristic">
         <div class="characteristic-header">
             <span class="characteristic-icon">⚡</span>
@@ -63,7 +63,7 @@ Esta no es una teoría científica, sino **la forma en que todos, en nuestro dí
         </div>
         <p>Son casi automáticas, no las cuestionamos conscientemente</p>
     </div>
-    
+
     <div class="characteristic">
         <div class="characteristic-header">
             <span class="characteristic-icon">🤝</span>
@@ -123,7 +123,7 @@ Utilizamos atajos mentales para tomar decisiones sobre otros.
             <li>Ayuda en la toma de decisiones rápidas</li>
         </ul>
     </div>
-    
+
     <div class="cons">
         <h3>❌ Limitaciones</h3>
         <ul>

@@ -17,10 +17,10 @@ Para diferenciarse del sentido común y establecerse como una ciencia legítima,
         <h2>Principio Empírico</h2>
         <p class="principle-subtitle">Basada en observación y experimentación sistemática</p>
     </div>
-    
+
     <div class="principle-content">
         <p>La psicología científica obtiene su conocimiento <strong>observando y experimentando de manera ordenada</strong>. No se basa en opiniones, intuiciones o historias personales. Busca respuestas de forma controlada y objetiva.</p>
-        
+
         <div class="what-not-counts">
             <h3>❌ No es suficiente para ser empírico:</h3>
             <ul class="not-sufficient-list">
@@ -80,10 +80,10 @@ Para diferenciarse del sentido común y establecerse como una ciencia legítima,
         <h2>Principio Público</h2>
         <p class="principle-subtitle">Conocimiento compartido y sometido a escrutinio</p>
     </div>
-    
+
     <div class="principle-content">
         <p>De nada sirve hacer un descubrimiento si te lo guardas para ti. <strong>El conocimiento científico debe ser compartido y sometido al escrutinio de otros expertos</strong>.</p>
-        
+
         <div class="publication-process">
             <h3>¿Cómo se hace público el conocimiento?</h3>
             <div class="process-steps">
@@ -121,7 +121,7 @@ Para diferenciarse del sentido común y establecerse como una ciencia legítima,
     </div>
     <div class="peer-review-content">
         <p>Antes de que un estudio se publique, <strong>otros científicos del mismo campo (pares) lo revisan de forma anónima y crítica</strong> para asegurar que el trabajo esté bien hecho.</p>
-        
+
         <div class="peer-review-process">
             <div class="review-step">
                 <div class="reviewer-icon">👩‍🔬</div>
@@ -145,7 +145,7 @@ Para diferenciarse del sentido común y establecerse como una ciencia legítima,
                 </div>
             </div>
         </div>
-        
+
         <div class="review-outcomes">
             <h4>Posibles resultados:</h4>
             <ul>
@@ -174,10 +174,10 @@ Para diferenciarse del sentido común y establecerse como una ciencia legítima,
         <h2>Principio de Replicabilidad</h2>
         <p class="principle-subtitle">Resultados que pueden ser confirmados independientemente</p>
     </div>
-    
+
     <div class="principle-content">
         <p>Un solo estudio, por muy bien hecho que esté, <strong>no es suficiente</strong>. Los resultados deben poder confirmarse.</p>
-        
+
         <div class="replication-meaning">
             <h3>¿Qué significa esto?</h3>
             <p>Que si otro grupo de investigadores, <strong>en otra parte del mundo</strong>, sigue los mismos pasos del estudio original, deberían llegar a <strong>resultados similares</strong>.</p>
@@ -219,7 +219,7 @@ Para diferenciarse del sentido común y establecerse como una ciencia legítima,
     </div>
     <div class="falsification-content">
         <p>Otros científicos no solo intentarán <strong>replicar</strong> los hallazgos, sino también <strong>falsearlos</strong>, es decir, poner a prueba hipótesis alternativas para ver si la explicación original se sostiene.</p>
-        
+
         <div class="falsification-process">
             <div class="falsification-step">
                 <div class="step-number">1</div>

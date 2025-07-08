@@ -23,7 +23,7 @@ Aquí hay una **diferencia clave** con otras ciencias. Si bien podemos tener una
             <p><strong>Actitud:</strong> Reconocemos nuestra limitación</p>
         </div>
     </div>
-    
+
     <div class="comparison-card psychology">
         <div class="comparison-header">
             <span class="comparison-icon">🧠</span>
@@ -47,13 +47,13 @@ Pero en psicología, **nuestras ideas sobre la mente están muy conectadas con q
         <h3>Conexión Personal</h3>
         <p>Nuestras teorías sobre la mente forman parte de nuestra identidad</p>
     </div>
-    
+
     <div class="connection-element">
         <span class="connection-icon">🛡️</span>
         <h3>Función Protectora</h3>
         <p>Nos ayudan a navegar el mundo social y emocional</p>
     </div>
-    
+
     <div class="connection-element">
         <span class="connection-icon">⚖️</span>
         <h3>Resistencia al Cambio</h3>
@@ -74,7 +74,7 @@ Esta resistencia se explica por conceptos bien documentados:
     </div>
     <div class="mechanism-content">
         <p><strong>Definición:</strong> La tendencia a buscar y valorar solo la información que confirma lo que ya creemos</p>
-        
+
         <div class="example">
             <h4>Ejemplo:</h4>
             <p>Si creemos que "los introvertidos son tímidos", solo notaremos a los introvertidos que son tímidos, ignorando a los que son seguros de sí mismos.</p>
@@ -91,7 +91,7 @@ Esta resistencia se explica por conceptos bien documentados:
     </div>
     <div class="mechanism-content">
         <p><strong>Definición:</strong> El malestar que sentimos cuando enfrentamos ideas que contradicen nuestras creencias</p>
-        
+
         <div class="example">
             <h4>Ejemplo:</h4>
             <p>Si siempre hemos creído que "las personas buenas no mienten", sentiremos incomodidad al aprender que incluso las personas éticas mienten ocasionalmente.</p>
@@ -109,9 +109,9 @@ Esta resistencia se explica por conceptos bien documentados:
             <p>Tenemos ideas sobre cómo funciona la mente</p>
         </div>
     </div>
-    
+
     <div class="cycle-arrow">→</div>
-    
+
     <div class="cycle-step">
         <div class="step-number">2</div>
         <div class="step-content">
@@ -119,9 +119,9 @@ Esta resistencia se explica por conceptos bien documentados:
             <p>La ciencia cuestiona nuestras creencias</p>
         </div>
     </div>
-    
+
     <div class="cycle-arrow">→</div>
-    
+
     <div class="cycle-step">
         <div class="step-number">3</div>
         <div class="step-content">
@@ -129,9 +129,9 @@ Esta resistencia se explica por conceptos bien documentados:
             <p>Activamos sesgos para proteger nuestras ideas</p>
         </div>
     </div>
-    
+
     <div class="cycle-arrow">→</div>
-    
+
     <div class="cycle-step">
         <div class="step-number">4</div>
         <div class="step-content">
@@ -154,7 +154,7 @@ Esta resistencia se explica por conceptos bien documentados:
             <li>Mantiene prejuicios sociales</li>
         </ul>
     </div>
-    
+
     <div class="consequence positive">
         <span class="consequence-icon">✅</span>
         <h3>Oportunidades</h3>

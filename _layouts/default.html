@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'es' }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description }}">
-    
+
     <!-- SEO Tags -->
     {% seo %}
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
-    
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#2563eb">
-    
+
     <!-- Theme preference -->
     <script>
         // Check for saved theme preference or default to light mode
@@ -32,6 +35,7 @@
         document.documentElement.setAttribute('data-theme', currentTheme);
     </script>
 </head>
+
 <body>
     <!-- Loading spinner -->
     <div id="loading-spinner" class="loading-spinner">
@@ -81,7 +85,7 @@
         <div class="sidebar-header">
             <h3>Contenidos</h3>
         </div>
-        
+
         <div class="sidebar-content">
             <nav class="toc" aria-label="Tabla de contenidos">
                 <ol class="toc-list">
@@ -175,7 +179,7 @@
                 <span>{{ page.previous.title }}</span>
             </a>
             {% endif %}
-            
+
             {% if page.next %}
             <a href="{{ page.next.url | relative_url }}" class="nav-btn nav-btn--next">
                 <span>{{ page.next.title }}</span>
@@ -203,16 +207,17 @@
 
     <!-- Scripts -->
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-    
+
     <!-- Analytics -->
     {% if site.google_analytics %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', '{{ site.google_analytics }}');
     </script>
     {% endif %}
 </body>
+
 </html>

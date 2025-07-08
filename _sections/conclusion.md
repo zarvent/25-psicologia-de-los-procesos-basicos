@@ -27,7 +27,7 @@ A lo largo de más de un siglo, la psicología básica ha creado **modelos cada 
                 <span>Rehabilitación neuropsicológica</span>
             </div>
         </div>
-        
+
         <div class="application-card education">
             <div class="application-icon">📚</div>
             <h3>Educación</h3>
@@ -38,7 +38,7 @@ A lo largo de más de un siglo, la psicología básica ha creado **modelos cada 
                 <span>Diseño de currículo</span>
             </div>
         </div>
-        
+
         <div class="application-card neuropsychology">
             <div class="application-icon">🧠</div>
             <h3>Neuropsicología</h3>
@@ -49,7 +49,7 @@ A lo largo de más de un siglo, la psicología básica ha creado **modelos cada 
                 <span>Evaluación cognitiva</span>
             </div>
         </div>
-        
+
         <div class="application-card marketing">
             <div class="application-icon">📈</div>
             <h3>Marketing</h3>
@@ -81,7 +81,7 @@ A lo largo de más de un siglo, la psicología básica ha creado **modelos cada 
                 </div>
             </div>
         </div>
-        
+
         <div class="process-step">
             <div class="step-number">2</div>
             <div class="step-content">
@@ -92,7 +92,7 @@ A lo largo de más de un siglo, la psicología básica ha creado **modelos cada 
                 </div>
             </div>
         </div>
-        
+
         <div class="process-step">
             <div class="step-number">3</div>
             <div class="step-content">
@@ -103,7 +103,7 @@ A lo largo de más de un siglo, la psicología básica ha creado **modelos cada 
                 </div>
             </div>
         </div>
-        
+
         <div class="process-step">
             <div class="step-number">4</div>
             <div class="step-content">
@@ -139,7 +139,7 @@ A lo largo de más de un siglo, la psicología básica ha creado **modelos cada 
             </div>
         </div>
     </div>
-    
+
     <div class="case-study">
         <div class="case-header">
             <h3>💭 Caso de Estudio: Tratamiento de la Depresión</h3>
@@ -249,7 +249,7 @@ A lo largo de más de un siglo, la psicología básica ha creado **modelos cada 
     <div class="reflection-content">
         <h2>¿Qué hemos aprendido?</h2>
         <p>A través de este recorrido, hemos visto cómo la psicología evolucionó desde explicaciones intuitivas hasta convertirse en una ciencia rigurosa. Los tres principios fundamentales —empírica, pública y replicable— no son solo reglas metodológicas, sino las bases que permiten que el conocimiento sobre la mente humana sea confiable y útil.</p>
-        
+
         <div class="key-takeaways">
             <h3>Puntos Clave para Recordar</h3>
             <ul>
@@ -259,7 +259,7 @@ A lo largo de más de un siglo, la psicología básica ha creado **modelos cada 
                 <li>El conocimiento científico debe ser abierto y verificable</li>
             </ul>
         </div>
-        
+
         <div class="personal-application">
             <h3>Aplicación Personal</h3>
             <p>Como ciudadanos informados, podemos:</p>
