@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="processGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9f7aea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#805ad5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Process boxes -->
+  <rect x="40" y="80" width="30" height="40" rx="5" fill="url(#processGradient)" stroke="#2d3748" stroke-width="2"/>
+  <rect x="85" y="80" width="30" height="40" rx="5" fill="url(#processGradient)" stroke="#2d3748" stroke-width="2"/>
+  <rect x="130" y="80" width="30" height="40" rx="5" fill="url(#processGradient)" stroke="#2d3748" stroke-width="2"/>
+  
+  <!-- Arrows -->
+  <path d="M72 100 L82 100 M78 95 L82 100 L78 105" stroke="#2d3748" stroke-width="2" fill="none"/>
+  <path d="M117 100 L127 100 M123 95 L127 100 L123 105" stroke="#2d3748" stroke-width="2" fill="none"/>
+  
+  <!-- Process indicators -->
+  <circle cx="55" cy="90" r="2" fill="#f7fafc"/>
+  <circle cx="55" cy="100" r="2" fill="#f7fafc"/>
+  <circle cx="55" cy="110" r="2" fill="#f7fafc"/>
+  
+  <circle cx="100" cy="90" r="2" fill="#f7fafc"/>
+  <circle cx="100" cy="100" r="2" fill="#f7fafc"/>
+  <circle cx="100" cy="110" r="2" fill="#f7fafc"/>
+  
+  <circle cx="145" cy="90" r="2" fill="#f7fafc"/>
+  <circle cx="145" cy="100" r="2" fill="#f7fafc"/>
+  <circle cx="145" cy="110" r="2" fill="#f7fafc"/>
+  
+  <!-- Input/Output -->
+  <circle cx="25" cy="100" r="8" fill="#48bb78" stroke="#2d3748" stroke-width="2"/>
+  <circle cx="175" cy="100" r="8" fill="#ed8936" stroke="#2d3748" stroke-width="2"/>
+  
+  <!-- Input arrow -->
+  <path d="M35 100 L37 100 M33 95 L37 100 L33 105" stroke="#2d3748" stroke-width="2" fill="none"/>
+  
+  <!-- Output arrow -->
+  <path d="M162 100 L172 100 M168 95 L172 100 L168 105" stroke="#2d3748" stroke-width="2" fill="none"/>
+  
+  <!-- Process flow labels -->
+  <text x="55" y="140" font-family="Arial, sans-serif" font-size="10" fill="#2d3748" text-anchor="middle">Input</text>
+  <text x="100" y="140" font-family="Arial, sans-serif" font-size="10" fill="#2d3748" text-anchor="middle">Process</text>
+  <text x="145" y="140" font-family="Arial, sans-serif" font-size="10" fill="#2d3748" text-anchor="middle">Output</text>
+</svg>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'es' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <!-- SEO Tags -->
+    {% seo %}
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Theme preference -->
+    <script>
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    </script>
+</head>
+<body>
+    <!-- Loading spinner -->
+    <div id="loading-spinner" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="{{ '/' | relative_url }}" class="brand-link">
+                    <i class="fas fa-brain"></i>
+                    <span>{{ site.title }}</span>
+                </a>
+            </div>
+
+            <div class="nav-controls">
+                <!-- Search -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Buscar..." aria-label="Búsqueda">
+                    <button id="search-btn" aria-label="Buscar">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <!-- Theme toggle -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+
+                <!-- Mobile menu toggle -->
+                <button id="menu-toggle" class="menu-toggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" role="complementary" aria-label="Tabla de contenidos">
+        <div class="sidebar-header">
+            <h3>Contenidos</h3>
+        </div>
+        
+        <div class="sidebar-content">
+            <nav class="toc" aria-label="Tabla de contenidos">
+                <ol class="toc-list">
+                    <li class="toc-item">
+                        <a href="#introduccion" class="toc-link">
+                            <span class="toc-number">1.</span>
+                            <span class="toc-text">Introducción</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#antecedentes-historicos" class="toc-link">
+                            <span class="toc-number">2.</span>
+                            <span class="toc-text">Antecedentes Históricos</span>
+                        </a>
+                        <ol class="toc-sublist">
+                            <li><a href="#explicaciones-religiosas" class="toc-link">Explicaciones Religiosas</a></li>
+                            <li><a href="#explicaciones-filosoficas" class="toc-link">Explicaciones Filosóficas</a></li>
+                            <li><a href="#explicaciones-artisticas" class="toc-link">Explicaciones Artísticas</a></li>
+                        </ol>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#psicologia-sentido-comun" class="toc-link">
+                            <span class="toc-number">3.</span>
+                            <span class="toc-text">Psicología del Sentido Común</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#obstaculo-aceptacion" class="toc-link">
+                            <span class="toc-number">4.</span>
+                            <span class="toc-text">El Obstáculo de Aceptación</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#metodo-cientifico" class="toc-link">
+                            <span class="toc-number">5.</span>
+                            <span class="toc-text">Método Científico</span>
+                        </a>
+                        <ol class="toc-sublist">
+                            <li><a href="#empirica" class="toc-link">Empírica</a></li>
+                            <li><a href="#publica" class="toc-link">Pública</a></li>
+                            <li><a href="#replicable" class="toc-link">Replicable</a></li>
+                        </ol>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#conclusion" class="toc-link">
+                            <span class="toc-number">6.</span>
+                            <span class="toc-text">Conclusión</span>
+                        </a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- Progress bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="{{ '/' | relative_url }}">Inicio</a>
+                </li>
+                {% if page.section %}
+                <li class="breadcrumb-item">
+                    <span>{{ page.section }}</span>
+                </li>
+                {% endif %}
+                {% if page.title != site.title %}
+                <li class="breadcrumb-item active" aria-current="page">
+                    <span>{{ page.title }}</span>
+                </li>
+                {% endif %}
+            </ol>
+        </nav>
+
+        <!-- Content -->
+        <article class="content">
+            {{ content }}
+        </article>
+
+        <!-- Navigation buttons -->
+        <nav class="content-nav" aria-label="Navegación de contenido">
+            {% if page.previous %}
+            <a href="{{ page.previous.url | relative_url }}" class="nav-btn nav-btn--prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>{{ page.previous.title }}</span>
+            </a>
+            {% endif %}
+            
+            {% if page.next %}
+            <a href="{{ page.next.url | relative_url }}" class="nav-btn nav-btn--next">
+                <span>{{ page.next.title }}</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            {% endif %}
+        </nav>
+    </main>
+
+    <!-- Search results -->
+    <div id="search-results" class="search-results" role="region" aria-label="Resultados de búsqueda">
+        <div class="search-results-header">
+            <h3>Resultados de búsqueda</h3>
+            <button id="close-search" class="close-search" aria-label="Cerrar búsqueda">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="search-results-content" id="search-results-content">
+            <!-- Search results will be populated here -->
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Scripts -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    
+    <!-- Analytics -->
+    {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+    </script>
+    {% endif %}
+</body>
+</html>

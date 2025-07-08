@@ -1,0 +1,63 @@
+# Jekyll Configuration for Psicología de los Procesos Básicos
+title: "Psicología de los Procesos Básicos"
+description: "Una guía completa sobre la disciplina científica que estudia la mente y sus procesos fundamentales"
+url: "https://username.github.io"
+baseurl: "/25-psicologia-de-los-procesos-basicos"
+
+# Author
+author:
+  name: "Academia de Psicología"
+  email: "contact@example.com"
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  sections:
+    output: true
+    permalink: /:collection/:name/
+
+# SEO
+lang: es
+locale: es_ES
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - node_modules/
+  - materia prima/
+  - materia-prima.md
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "sections"
+    values:
+      layout: "section"
