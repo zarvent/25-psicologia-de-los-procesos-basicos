@@ -1,0 +1,176 @@
+/* Optimizaciones CSS adicionales para mejorar la experiencia de lectura */
+:root {
+    --reading-width: 65ch;
+    /* Ancho óptimo para lectura según estudios de tipografía */
+    --line-height-optimal: 1.6;
+    /* Proporción áurea para legibilidad */
+    --color-contrast-ratio: 7:1;
+    /* WCAG AAA compliance */
+}
+
+/* Sistema de espaciado basado en modular scale */
+.reader-container {
+    /* Implementación de ritmo vertical basado en baseline grid */
+    --baseline: 1.5rem;
+    --space-xs: calc(var(--baseline) * 0.25);
+    --space-sm: calc(var(--baseline) * 0.5);
+    --space-md: calc(var(--baseline) * 1);
+    --space-lg: calc(var(--baseline) * 2);
+    --space-xl: calc(var(--baseline) * 4);
+}
+
+/* Optimización para fatiga visual */
+.content-section {
+    /* Reducir el contraste extremo para sesiones de lectura largas */
+    background: #fafafa;
+    color: #2d3748;
+}
+
+/* Indicadores de progreso de lectura granulares */
+.section-progress {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 100;
+}
+
+.progress-indicators {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbd5e0;
+    transition: all 0.3s ease;
+}
+
+.progress-dot.active {
+    background: #3182ce;
+    transform: scale(1.2);
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #e2e8f0;
+        --text-color: #cbd5e0;
+        --light-bg: #2d3748;
+        --white: #1a202c;
+    }
+
+    body {
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    }
+}
+
+/* Optimización para dispositivos de tinta electrónica */
+@media screen and (monochrome) {
+    .content-section {
+        background: white;
+        border: 1px solid black;
+    }
+
+    .highlight {
+        background: transparent;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+}
+
+/* Mejoras para usuarios con dislexia */
+.dyslexia-friendly {
+    font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
+    letter-spacing: 0.12em;
+    word-spacing: 0.16em;
+    line-height: 2;
+}
+
+/* Controles de accesibilidad avanzados */
+.accessibility-controls {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+}
+
+.accessibility-toggle {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    margin: 0.25rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.accessibility-toggle:hover {
+    background: var(--primary-color);
+}
+
+.accessibility-toggle.active {
+    background: var(--highlight-color);
+}
+
+/* Optimización de performance con will-change */
+.progress-bar,
+.reading-controls,
+.accessibility-controls {
+    will-change: transform, opacity;
+}
+
+/* Reducción de motion sickness */
+@media (prefers-reduced-motion: no-preference) {
+    .content-section {
+        scroll-margin-top: 2rem;
+    }
+}
+
+/* Mejoras para lectores de pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--accent-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1001;
+}
+
+.skip-link:focus {
+    top: 6px;
+}

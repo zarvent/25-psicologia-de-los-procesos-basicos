@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Este Proyecto - Psicología de los Procesos Básicos</title>
+    <meta name="description"
+        content="Un proyecto educativo creado con pasión para hacer la psicología más accesible a todos">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .content-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border: none;
+            color: white;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #ff6b6b;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .story-section {
+            background: linear-gradient(135deg, #a8e6cf 0%, #dcedc8 100%);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+        }
+
+        .story-section h2 {
+            color: #2e7d32;
+            border-bottom: 3px solid #4caf50;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #2e7d32;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #4caf50;
+            margin: 1.5rem 0;
+        }
+
+        .nav-back {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .nav-back:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-back {
+                position: static;
+                display: inline-block;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="nav-back">← Volver al inicio</a>
+
+    <div class="container">
+        <header class="header">
+            <h1>Sobre Este Proyecto</h1>
+            <p>Un espacio digital creado con curiosidad y dedicación para hacer la psicología más accesible a todos</p>
+        </header>
+
+        <section class="story-section">
+            <h2>¿Qué es esto?</h2>
+            <p>
+                Este proyecto nació de una idea simple: <strong>la psicología no debería ser intimidante</strong>.
+                Demasiado a menudo, las explicaciones sobre cómo funciona nuestra mente están llenas de
+                jerga técnica que aleja a las personas curiosas.
+            </p>
+            <div class="quote">
+                "Creemos que todos merecen entender cómo funciona su propia mente, sin necesidad de un doctorado en
+                psicología."
+            </div>
+            <p>
+                Aquí encontrarás explicaciones claras sobre los procesos básicos que ocurren en tu cerebro
+                todos los días: cómo percibes el mundo, cómo prestas atención, cómo recuerdas, cómo piensas.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>¿Para quién es esto?</h2>
+            <p>
+                Este contenido está pensado para cualquier persona con curiosidad sobre la mente humana.
+                No necesitas conocimientos previos. Solo ganas de aprender.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Estudiantes</h3>
+                    <p>Complementa tus estudios con explicaciones claras y ejemplos prácticos</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Curiosos</h3>
+                    <p>Descubre cómo funciona tu propia mente de manera sencilla</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Profesionales</h3>
+                    <p>Refresca conceptos básicos con una perspectiva renovada</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Autodidactas</h3>
+                    <p>Aprende a tu ritmo con contenido estructurado y progresivo</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>¿Cómo usar este sitio?</h2>
+            <p>
+                Puedes navegar por las diferentes secciones en el orden que prefieras.
+                Cada sección está diseñada para ser independiente, aunque seguir el orden
+                propuesto te dará una comprensión más completa del tema.
+            </p>
+            <p>
+                El contenido está basado en investigación científica, pero presentado de manera
+                que cualquier persona pueda entenderlo. No hay exámenes ni evaluaciones.
+                Solo el placer de entender mejor cómo funciona tu mente.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Detrás del proyecto</h2>
+            <p>
+                Este es un proyecto educativo sin fines de lucro. Nuestro único objetivo es
+                hacer que el conocimiento sobre psicología sea más accesible y menos intimidante.
+            </p>
+            <p>
+                El contenido se basa en décadas de investigación científica, pero está
+                presentado de manera que puedas conectar con él a nivel personal.
+                Después de todo, la psicología es el estudio de nosotros mismos.
+            </p>
+        </section>
+
+        <section class="cta-section">
+            <h2>¿Listo para explorar tu mente?</h2>
+            <p>
+                Elige cómo quieres comenzar tu viaje de descubrimiento
+            </p>
+            <div class="cta-buttons">
+                <a href="reader.html" class="btn btn-primary">📖 Leer el contenido completo</a>
+                <a href="index.html" class="btn btn-secondary">🚀 Explorar por secciones</a>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
