@@ -1,0 +1,16 @@
+# .gitignore
+
+# Ignorar el directorio de compilación de Jekyll.
+/_site/
+
+# Ignorar los metadatos de Bundler y las gemas descargadas.
+/.bundle/
+/vendor/bundle/
+
+# Ignorar archivos de caché de Sass y Jekyll.
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ignorar el archivo de bloqueo de dependencias para GitHub Pages.
+Gemfile.lock
