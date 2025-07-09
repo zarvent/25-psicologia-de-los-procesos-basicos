@@ -3,6 +3,7 @@ title: "Introducción"
 subtitle: "La disciplina científica que estudia la mente"
 description: "¿Qué es la psicología de los procesos básicos y por qué es importante?"
 order: 1
+icon: "🧠"
 ---
 
 # Psicología de los Procesos Básicos

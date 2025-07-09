@@ -425,31 +425,77 @@
     initializeTheme();
     initializeSearch();
     generateTableOfContents();
+    initializeProgressBar();
+    initializeMobileMenu();
+    initializePageTransitions();
+    highlightActiveSection();
     calculateReadingTime();
-
-    // Add scroll listener for progress bar
-    window.addEventListener('scroll', throttle(updateReadingProgress, 100));
-
-    // Close search modal when clicking outside
-    document.addEventListener('click', (event) => {
-      if (event.target === searchModal) {
-        toggleSearch();
-      }
-    });
-
-    // Close floating TOC when clicking outside
-    document.addEventListener('click', (event) => {
-      const floatingToc = document.getElementById('floating-toc');
-      const floatingTocContent = document.getElementById('floating-toc-content');
-
-      if (floatingToc && !floatingToc.contains(event.target) && floatingTocContent.classList.contains('show')) {
-        toggleFloatingTOC();
-      }
-    });
-
-    // Initialize progress bar
-    updateReadingProgress();
   }
+
+  // Initialize reading progress bar
+  function initializeProgressBar() {
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const percent = Math.min((scrollTop / docHeight) * 100, 100);
+            progressBar.style.width = percent + '%';
+        });
+    }
+}
+
+  // Initialize mobile menu
+  function initializeMobileMenu() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            document.body.classList.toggle('menu-open');
+        });
+    }
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+        if (document.body.classList.contains('menu-open') && 
+            !sidebar.contains(event.target) && 
+            !menuToggle.contains(event.target)) {
+            document.body.classList.remove('menu-open');
+        }
+    });
+}
+
+  // Initialize page transitions
+  function initializePageTransitions() {
+    // Add loading animation to page content
+    const content = document.querySelector('.main-content, .home-layout, .section-layout');
+    if (content) {
+        content.style.opacity = '0';
+        content.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            content.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            content.style.opacity = '1';
+            content.style.transform = 'translateY(0)';
+        }, 100);
+    }
+}
+
+  // Highlight active section
+  function highlightActiveSection() {
+    const currentPath = window.location.pathname.replace(/\/$/, '');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href').replace(/\/$/, '');
+        if (href === currentPath) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
 
   // ==========================================================================
   // GLOBAL FUNCTIONS

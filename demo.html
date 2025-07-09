@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Psicología de los Procesos Básicos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #005F73;
+            --color-secondary: #94D2BD;
+            --color-text: #212529;
+            --color-background: #F8F9FA;
+            --color-background-secondary: #ffffff;
+            --color-background-tertiary: #f3f4f6;
+            --color-border: #e5e7eb;
+            --font-serif: 'Lora', serif;
+            --font-sans: 'Inter', sans-serif;
+            --sidebar-width: 280px;
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            line-height: 1.6;
+        }
+
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--color-background-secondary);
+            border-right: 1px solid var(--color-border);
+            padding: var(--space-6);
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform var(--transition-normal);
+            z-index: 1000;
+        }
+
+        .sidebar-header {
+            padding-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: var(--space-6);
+        }
+
+        .site-title {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .site-title a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            margin-bottom: var(--space-2);
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3) var(--space-4);
+            color: var(--color-text);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            background-color: var(--color-background-tertiary);
+            color: var(--color-primary);
+        }
+
+        .nav-link.active {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .nav-link.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--color-secondary);
+            border-radius: 0 2px 2px 0;
+        }
+
+        .nav-icon {
+            font-size: var(--text-lg);
+        }
+
+        .nav-text {
+            font-weight: 500;
+            font-size: var(--text-sm);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: var(--space-6);
+            max-width: 800px;
+            margin: 0 auto;
+            margin-left: 0;
+            transition: margin-left var(--transition-normal);
+        }
+
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            z-index: 1001;
+            background: transparent;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 30%;
+            background-color: var(--color-primary);
+            transition: width var(--transition-normal);
+        }
+
+        .menu-toggle {
+            display: block;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1002;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .content h1 {
+            font-family: var(--font-serif);
+            color: var(--color-primary);
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-6);
+            line-height: 1.2;
+        }
+
+        .content h2 {
+            font-family: var(--font-serif);
+            color: var(--color-primary);
+            font-size: var(--text-2xl);
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-4);
+        }
+
+        .content h3 {
+            font-family: var(--font-serif);
+            color: var(--color-primary);
+            font-size: var(--text-xl);
+            margin-top: var(--space-6);
+            margin-bottom: var(--space-3);
+        }
+
+        .content p {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            line-height: 1.7;
+            margin-bottom: var(--space-4);
+            font-size: var(--text-base);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+            margin: var(--space-8) 0;
+        }
+
+        .process-card {
+            background: var(--color-background-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: var(--space-6);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+
+        .process-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary);
+        }
+
+        .process-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-4);
+            display: block;
+        }
+
+        .process-card h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-2);
+            font-size: var(--text-lg);
+        }
+
+        .process-card p {
+            color: var(--color-text);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        @media (min-width: 768px) {
+            .sidebar {
+                position: relative;
+                transform: none;
+            }
+            
+            .main-content {
+                margin-left: var(--sidebar-width);
+            }
+            
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        body.menu-open .sidebar {
+            transform: translateX(0);
+        }
+
+        body.menu-open::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <!-- Menu Toggle -->
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" role="complementary">
+            <div class="sidebar-header">
+                <h1 class="site-title"><a href="#home">Psicología de los Procesos Básicos</a></h1>
+            </div>
+            <div class="sidebar-content">
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#introduccion" class="nav-link active">
+                                <span class="nav-icon">🧠</span>
+                                <span class="nav-text">Introducción</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#historia" class="nav-link">
+                                <span class="nav-icon">🏛️</span>
+                                <span class="nav-text">Historia y Antecedentes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#sentido-comun" class="nav-link">
+                                <span class="nav-icon">💭</span>
+                                <span class="nav-text">Psicología del Sentido Común</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#obstaculo" class="nav-link">
+                                <span class="nav-icon">🚧</span>
+                                <span class="nav-text">El Obstáculo</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#metodo" class="nav-link">
+                                <span class="nav-icon">🔬</span>
+                                <span class="nav-text">Método Científico</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#principios" class="nav-link">
+                                <span class="nav-icon">⚖️</span>
+                                <span class="nav-text">Los Tres Principios</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#conclusion" class="nav-link">
+                                <span class="nav-icon">🎯</span>
+                                <span class="nav-text">Conclusión</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content fade-in" role="main">
+            <div class="content">
+                <h1>Psicología de los Procesos Básicos</h1>
+                
+                <p>La psicología de los procesos básicos es la <strong>disciplina científica que estudia la mente</strong>: qué hay en ella y cómo funciona. Se enfoca en procesos como la percepción, la atención, la memoria, el pensamiento, el lenguaje, la motivación y la emoción.</p>
+
+                <h2>Los Procesos Mentales Básicos</h2>
+
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-icon">👁️</div>
+                        <h3>Percepción</h3>
+                        <p>Cómo interpretamos la información sensorial</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon">🎯</div>
+                        <h3>Atención</h3>
+                        <p>Cómo enfocamos nuestra conciencia</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon">💭</div>
+                        <h3>Memoria</h3>
+                        <p>Cómo almacenamos y recuperamos información</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon">🧠</div>
+                        <h3>Pensamiento</h3>
+                        <p>Cómo procesamos y razonamos</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon">💬</div>
+                        <h3>Lenguaje</h3>
+                        <p>Cómo nos comunicamos y expresamos ideas</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon">⚡</div>
+                        <h3>Motivación</h3>
+                        <p>Qué nos impulsa a actuar</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon">❤️</div>
+                        <h3>Emoción</h3>
+                        <p>Cómo sentimos y reaccionamos</p>
+                    </div>
+                </div>
+
+                <h2>¿Por qué es importante?</h2>
+
+                <p>Entender estos procesos nos ayuda a:</p>
+                <ul>
+                    <li>Comprender mejor el comportamiento humano</li>
+                    <li>Desarrollar tratamientos para trastornos mentales</li>
+                    <li>Mejorar el aprendizaje y la educación</li>
+                    <li>Diseñar tecnologías más intuitivas</li>
+                    <li>Optimizar el rendimiento en diversos campos</li>
+                </ul>
+
+                <h2>Enfoque Científico</h2>
+
+                <p>La psicología de los procesos básicos se distingue por su riguroso método científico, basado en:</p>
+                
+                <ul>
+                    <li><strong>Evidencia empírica:</strong> Observación y experimentación sistemática</li>
+                    <li><strong>Replicabilidad:</strong> Resultados que pueden ser confirmados</li>
+                    <li><strong>Revisión por pares:</strong> Validación por la comunidad científica</li>
+                </ul>
+
+                <p>Esta aproximación científica garantiza que el conocimiento sea confiable y aplicable en diversos contextos.</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        
+        menuToggle.addEventListener('click', () => {
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (document.body.classList.contains('menu-open') && 
+                !sidebar.contains(event.target) && 
+                !menuToggle.contains(event.target)) {
+                document.body.classList.remove('menu-open');
+            }
+        });
+
+        // Active link highlighting
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+
+        // Progress bar animation
+        const progressBar = document.getElementById('progress-bar');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const percent = Math.min((scrollTop / docHeight) * 100, 100);
+            progressBar.style.width = percent + '%';
+        });
+    </script>
+</body>
+</html>

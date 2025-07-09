@@ -3,6 +3,7 @@ title: "Historia y Antecedentes"
 subtitle: "Explicaciones antes de la psicología científica"
 description: "Cómo la humanidad ha intentado entender la mente a lo largo de la historia"
 order: 2
+icon: "🏛️"
 ---
 
 # Antes de la psicología como ciencia, ya se buscaban explicaciones

@@ -15,8 +15,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;600&display=swap"
         rel="stylesheet">
 
     <!-- Styles -->
@@ -66,8 +65,8 @@
 
                 <!-- Theme toggle -->
                 <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-sun sun-icon" style="display: none;"></i>
+                    <i class="fas fa-moon moon-icon" style="display: none;"></i>
                 </button>
 
                 <!-- Mobile menu toggle -->
@@ -81,61 +80,38 @@
     </nav>
 
     <!-- Sidebar -->
-    <aside class="sidebar" role="complementary" aria-label="Tabla de contenidos">
+    <aside class="sidebar" role="complementary" aria-label="Navegación principal">
         <div class="sidebar-header">
-            <h3>Contenidos</h3>
+            <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
         </div>
-
         <div class="sidebar-content">
-            <nav class="toc" aria-label="Tabla de contenidos">
-                <ol class="toc-list">
-                    <li class="toc-item">
-                        <a href="#introduccion" class="toc-link">
-                            <span class="toc-number">1.</span>
-                            <span class="toc-text">Introducción</span>
-                        </a>
-                    </li>
-                    <li class="toc-item">
-                        <a href="#antecedentes-historicos" class="toc-link">
-                            <span class="toc-number">2.</span>
-                            <span class="toc-text">Antecedentes Históricos</span>
-                        </a>
-                        <ol class="toc-sublist">
-                            <li><a href="#explicaciones-religiosas" class="toc-link">Explicaciones Religiosas</a></li>
-                            <li><a href="#explicaciones-filosoficas" class="toc-link">Explicaciones Filosóficas</a></li>
-                            <li><a href="#explicaciones-artisticas" class="toc-link">Explicaciones Artísticas</a></li>
-                        </ol>
-                    </li>
-                    <li class="toc-item">
-                        <a href="#psicologia-sentido-comun" class="toc-link">
-                            <span class="toc-number">3.</span>
-                            <span class="toc-text">Psicología del Sentido Común</span>
-                        </a>
-                    </li>
-                    <li class="toc-item">
-                        <a href="#obstaculo-aceptacion" class="toc-link">
-                            <span class="toc-number">4.</span>
-                            <span class="toc-text">El Obstáculo de Aceptación</span>
-                        </a>
-                    </li>
-                    <li class="toc-item">
-                        <a href="#metodo-cientifico" class="toc-link">
-                            <span class="toc-number">5.</span>
-                            <span class="toc-text">Método Científico</span>
-                        </a>
-                        <ol class="toc-sublist">
-                            <li><a href="#empirica" class="toc-link">Empírica</a></li>
-                            <li><a href="#publica" class="toc-link">Pública</a></li>
-                            <li><a href="#replicable" class="toc-link">Replicable</a></li>
-                        </ol>
-                    </li>
-                    <li class="toc-item">
-                        <a href="#conclusion" class="toc-link">
-                            <span class="toc-number">6.</span>
-                            <span class="toc-text">Conclusión</span>
-                        </a>
-                    </li>
-                </ol>
+            <nav class="main-nav" aria-label="Navegación de secciones">
+                <ul class="nav-list">
+                    {% assign sections = site.sections | sort: 'order' %}
+                    {% for section in sections %}
+                        {% assign section_name = section.title | downcase %}
+                        {% if section_name contains 'sentido' %}
+                            {% assign icon = '💭' %}
+                        {% elsif section_name contains 'obstáculo' or section_name contains 'obstaculo' %}
+                            {% assign icon = '🚧' %}
+                        {% elsif section_name contains 'método' or section_name contains 'metodo' %}
+                            {% assign icon = '🔬' %}
+                        {% elsif section_name contains 'principio' %}
+                            {% assign icon = '⚖️' %}
+                        {% elsif section_name contains 'conclusión' or section_name contains 'conclusion' %}
+                            {% assign icon = '🎯' %}
+                        {% else %}
+                            {% assign icon = section.icon | default: '📄' %}
+                        {% endif %}
+                        
+                        <li class="nav-item">
+                            <a href="{{ section.url | relative_url }}" class="nav-link {% if page.url == section.url %}active{% endif %}">
+                                <span class="nav-icon">{{ icon }}</span>
+                                <span class="nav-text">{{ section.title }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
             </nav>
         </div>
     </aside>
