@@ -6,37 +6,37 @@ service cloud.firestore {
       allow read: if true; // Public read access for analytics
       allow write: if request.auth == null && validateReadingProgress(request.resource.data);
     }
-    
+
     // User feedback collection
     match /user_feedback/{document} {
       allow read: if true; // Public read access for displaying feedback
       allow write: if request.auth == null && validateFeedback(request.resource.data);
     }
-    
+
     // Search queries collection
     match /search_queries/{document} {
       allow read: if false; // Private analytics data
       allow write: if request.auth == null && validateSearchQuery(request.resource.data);
     }
-    
+
     // Page views collection
     match /page_views/{document} {
       allow read: if false; // Private analytics data
       allow write: if request.auth == null && validatePageView(request.resource.data);
     }
-    
+
     // Content suggestions collection
     match /content_suggestions/{document} {
       allow read: if true; // Public read access
       allow write: if false; // Only admins can write (via admin SDK)
     }
-    
+
     // Notifications collection
     match /notifications/{document} {
       allow read: if true; // Public read access
       allow write: if false; // Only admins can write
     }
-    
+
     // Validation functions
     function validateReadingProgress(data) {
       return data.keys().hasAll(['section', 'progress', 'timestamp', 'sessionId']) &&
@@ -47,7 +47,7 @@ service cloud.firestore {
              data.timestamp is timestamp &&
              data.sessionId is string;
     }
-    
+
     function validateFeedback(data) {
       return data.keys().hasAll(['section', 'rating', 'timestamp', 'sessionId']) &&
              data.section is string &&
@@ -58,7 +58,7 @@ service cloud.firestore {
              data.sessionId is string &&
              (!data.keys().hasAny(['comment']) || data.comment is string);
     }
-    
+
     function validateSearchQuery(data) {
       return data.keys().hasAll(['query', 'resultsCount', 'timestamp', 'sessionId']) &&
              data.query is string &&
@@ -69,7 +69,7 @@ service cloud.firestore {
              data.timestamp is timestamp &&
              data.sessionId is string;
     }
-    
+
     function validatePageView(data) {
       return data.keys().hasAll(['page', 'title', 'timestamp']) &&
              data.page is string &&

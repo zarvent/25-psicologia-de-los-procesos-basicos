@@ -30,7 +30,7 @@ class FeedbackComponent {
       <div class="feedback-form">
         <h3>💬 Tu Opinión Nos Importa</h3>
         <p>Ayúdanos a mejorar esta sección: <strong>${currentSection}</strong></p>
-        
+
         <div class="form-group">
           <label>¿Qué te pareció esta sección?</label>
           <div class="rating-group">

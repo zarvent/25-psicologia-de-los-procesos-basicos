@@ -1,7 +1,7 @@
 /**
  * Firebase Configuration and Firestore Integration
  * Modern Serverless Architecture for GitHub Pages
- * 
+ *
  * This implements the Fase 2 strategy from the diagnostic report:
  * - Real-time data management with Firestore
  * - Serverless architecture for scalability
@@ -63,7 +63,7 @@ class AnalyticsManager {
 
   trackPageView() {
     if (!this.initialized) return;
-    
+
     try {
       // Track page view
       const pageData = {
@@ -159,10 +159,10 @@ class ContentManager {
     try {
       // Load reading statistics
       await this.loadReadingStats();
-      
+
       // Load user feedback
       await this.loadUserFeedback();
-      
+
       // Load content suggestions
       await this.loadContentSuggestions();
     } catch (error) {
@@ -173,16 +173,16 @@ class ContentManager {
   async loadReadingStats() {
     try {
       const { getDocs, collection, query, orderBy, limit } = await import('https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js');
-      
+
       const statsQuery = query(
         collection(db, 'reading_progress'),
         orderBy('timestamp', 'desc'),
         limit(100)
       );
-      
+
       const snapshot = await getDocs(statsQuery);
       const stats = [];
-      
+
       snapshot.forEach((doc) => {
         stats.push(doc.data());
       });
@@ -196,16 +196,16 @@ class ContentManager {
   async loadUserFeedback() {
     try {
       const { getDocs, collection, query, orderBy, limit } = await import('https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js');
-      
+
       const feedbackQuery = query(
         collection(db, 'user_feedback'),
         orderBy('timestamp', 'desc'),
         limit(10)
       );
-      
+
       const snapshot = await getDocs(feedbackQuery);
       const feedback = [];
-      
+
       snapshot.forEach((doc) => {
         feedback.push(doc.data());
       });
@@ -219,16 +219,16 @@ class ContentManager {
   async loadContentSuggestions() {
     try {
       const { getDocs, collection, query, orderBy, limit } = await import('https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js');
-      
+
       const suggestionsQuery = query(
         collection(db, 'content_suggestions'),
         orderBy('priority', 'desc'),
         limit(5)
       );
-      
+
       const snapshot = await getDocs(suggestionsQuery);
       const suggestions = [];
-      
+
       snapshot.forEach((doc) => {
         suggestions.push(doc.data());
       });
@@ -377,17 +377,17 @@ class NotificationManager {
 
     try {
       const { getDocs, collection, query, where, orderBy, limit } = await import('https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js');
-      
+
       const notificationsQuery = query(
         collection(db, 'notifications'),
         where('active', '==', true),
         orderBy('timestamp', 'desc'),
         limit(5)
       );
-      
+
       const snapshot = await getDocs(notificationsQuery);
       const notifications = [];
-      
+
       snapshot.forEach((doc) => {
         notifications.push({ id: doc.id, ...doc.data() });
       });

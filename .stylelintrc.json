@@ -1,5 +1,7 @@
 {
-  "extends": ["stylelint-config-standard"],
+  "extends": [
+    "stylelint-config-standard"
+  ],
   "rules": {
     "indentation": 2,
     "string-quotes": "single",
@@ -11,27 +13,77 @@
     "selector-combinator-space-before": "always",
     "selector-pseudo-element-colon-notation": "double",
     "selector-pseudo-class-parentheses-space-inside": "never",
-    "selector-no-qualifying-type": [true, { "ignore": ["attribute"] }],
-    "property-no-vendor-prefix": [true, { "ignoreProperties": ["appearance"] }],
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": [
+          "attribute"
+        ]
+      }
+    ],
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": [
+          "appearance"
+        ]
+      }
+    ],
     "media-feature-parentheses-space-inside": "never",
     "media-feature-name-no-vendor-prefix": true,
     "at-rule-no-vendor-prefix": true,
     "comment-whitespace-inside": "always",
     "comment-empty-line-before": "always",
-    "rule-empty-line-before": ["always", { "except": ["first-nested"] }],
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "first-nested"
+        ]
+      }
+    ],
     "declaration-empty-line-before": "never",
     "declaration-block-trailing-semicolon": "always",
     "declaration-block-single-line-max-declarations": 1,
     "declaration-property-value-blacklist": {
-      "border": ["none"],
-      "border-top": ["none"],
-      "border-right": ["none"],
-      "border-bottom": ["none"],
-      "border-left": ["none"]
+      "border": [
+        "none"
+      ],
+      "border-top": [
+        "none"
+      ],
+      "border-right": [
+        "none"
+      ],
+      "border-bottom": [
+        "none"
+      ],
+      "border-left": [
+        "none"
+      ]
     },
-    "unit-whitelist": ["em", "rem", "s", "px", "%", "vh", "vw", "vmin", "vmax", "deg", "ms"],
+    "unit-whitelist": [
+      "em",
+      "rem",
+      "s",
+      "px",
+      "%",
+      "vh",
+      "vw",
+      "vmin",
+      "vmax",
+      "deg",
+      "ms"
+    ],
     "shorthand-property-no-redundant-values": true,
-    "value-no-vendor-prefix": [true, { "ignoreValues": ["box"] }],
+    "value-no-vendor-prefix": [
+      true,
+      {
+        "ignoreValues": [
+          "box"
+        ]
+      }
+    ],
     "custom-property-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
     "selector-class-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
     "selector-id-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",

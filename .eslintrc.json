@@ -19,12 +19,34 @@
     "NotificationManager": "writable"
   },
   "rules": {
-    "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "no-unused-vars": ["warn"],
-    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-unused-vars": [
+      "warn"
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
     "no-debugger": "error",
     "prefer-const": "error",
     "no-var": "error",
@@ -35,17 +57,35 @@
     "template-curly-spacing": "error",
     "no-trailing-spaces": "error",
     "eol-last": "error",
-    "comma-dangle": ["error", "never"],
-    "object-curly-spacing": ["error", "always"],
-    "array-bracket-spacing": ["error", "never"],
-    "computed-property-spacing": ["error", "never"],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "array-bracket-spacing": [
+      "error",
+      "never"
+    ],
+    "computed-property-spacing": [
+      "error",
+      "never"
+    ],
     "space-before-blocks": "error",
     "keyword-spacing": "error",
     "space-infix-ops": "error",
     "space-unary-ops": "error",
     "spaced-comment": "error",
-    "brace-style": ["error", "1tbs"],
-    "curly": ["error", "all"],
+    "brace-style": [
+      "error",
+      "1tbs"
+    ],
+    "curly": [
+      "error",
+      "all"
+    ],
     "dot-notation": "error",
     "eqeqeq": "error",
     "no-alert": "warn",

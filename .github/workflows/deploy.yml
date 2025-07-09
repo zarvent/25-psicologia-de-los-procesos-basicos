@@ -98,12 +98,12 @@ jobs:
           test -f _site/index.html || (echo "❌ index.html not found" && exit 1)
           test -f _site/assets/css/main.css || (echo "❌ main.css not found" && exit 1)
           test -f _site/assets/js/main.js || (echo "❌ main.js not found" && exit 1)
-          
+
           # Test if all sections exist
           for section in introduccion historia sentido-comun obstaculo metodo-cientifico principios conclusion; do
             test -f "_site/sections/$section/index.html" || (echo "❌ Section $section not found" && exit 1)
           done
-          
+
           echo "✅ All critical files and sections are present"
 
       - name: 📊 Performance Analysis
@@ -134,12 +134,12 @@ jobs:
             echo "❌ Sensitive files found"
             exit 1
           fi
-          
+
           # Check for hardcoded secrets in JavaScript
           if grep -r "sk_" assets/js/ || grep -r "SECRET" assets/js/ || grep -r "password" assets/js/; then
             echo "⚠️  Potential secrets found in JavaScript"
           fi
-          
+
           echo "✅ Security scan completed"
 
       - name: 📊 Generate Security Report
@@ -191,7 +191,7 @@ jobs:
         run: |
           # Minify CSS (basic approach)
           find _site/assets/css -name "*.css" -exec sed -i 's/  */ /g' {} \;
-          
+
           # Optimize images (if any PNG/JPG files exist)
           echo "🎨 Asset optimization completed"
 
@@ -213,10 +213,10 @@ jobs:
         run: |
           # Wait for deployment to propagate
           sleep 30
-          
+
           # Test main page
           curl -s -o /dev/null -w "%{http_code}" https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/ | grep -q "200" && echo "✅ Main page accessible" || echo "❌ Main page not accessible"
-          
+
       - name: 📊 Generate deployment report
         run: |
           echo "## 🚀 Deployment Report" > deployment-report.md
@@ -241,7 +241,7 @@ jobs:
       - name: 📊 Performance monitoring
         run: |
           echo "🔍 Setting up performance monitoring..."
-          
+
           # This would integrate with monitoring services
           echo "📊 Performance baseline established"
           echo "🎯 Core Web Vitals tracking enabled"

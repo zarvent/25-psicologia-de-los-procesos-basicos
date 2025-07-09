@@ -287,25 +287,25 @@
 
     const progress = Math.min(Math.max((scrollTop - articleTop + windowHeight / 2) / articleHeight, 0), 1);
     progressBar.style.width = `${progress * 100}%`;
-    
+
     // Enhanced Analytics: Track reading progress in real-time
     const currentSection = getCurrentSection();
     const progressPercent = Math.round(progress * 100);
-    
+
     // Track significant progress milestones
     if (progressPercent > 0 && progressPercent % 25 === 0) {
       if (window.AnalyticsManager) {
         window.AnalyticsManager.trackReadingProgress(currentSection, progressPercent);
       }
     }
-    
+
     // Store progress in localStorage for persistence
     const progressData = {
       section: currentSection,
       progress: progressPercent,
       timestamp: Date.now()
     };
-    
+
     let allProgress = JSON.parse(localStorage.getItem('readingProgress') || '{}');
     allProgress[currentSection] = progressData;
     localStorage.setItem('readingProgress', JSON.stringify(allProgress));
