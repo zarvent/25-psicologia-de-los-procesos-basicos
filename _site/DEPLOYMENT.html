@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Deployment Guide | Psicología de los Procesos Básicos</title>
+    <meta name="description" content="Una guía completa sobre la disciplina científica que estudia la mente y sus procesos fundamentales">
+
+    <!-- SEO Tags -->
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Deployment Guide | Psicología de los Procesos Básicos</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Deployment Guide" />
+<meta name="author" content="Academia de Psicología" />
+<meta property="og:locale" content="es_ES" />
+<meta name="description" content="Una guía completa sobre la disciplina científica que estudia la mente y sus procesos fundamentales" />
+<meta property="og:description" content="Una guía completa sobre la disciplina científica que estudia la mente y sus procesos fundamentales" />
+<link rel="canonical" href="https://username.github.io/25-psicologia-de-los-procesos-basicos/DEPLOYMENT.html" />
+<meta property="og:url" content="https://username.github.io/25-psicologia-de-los-procesos-basicos/DEPLOYMENT.html" />
+<meta property="og:site_name" content="Psicología de los Procesos Básicos" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Deployment Guide" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Academia de Psicología"},"description":"Una guía completa sobre la disciplina científica que estudia la mente y sus procesos fundamentales","headline":"Deployment Guide","url":"https://username.github.io/25-psicologia-de-los-procesos-basicos/DEPLOYMENT.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/25-psicologia-de-los-procesos-basicos/assets/css/main.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/25-psicologia-de-los-procesos-basicos/assets/images/favicon.svg">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Theme preference -->
+    <script>
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    </script>
+</head>
+
+<body>
+    <!-- Loading spinner -->
+    <div id="loading-spinner" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="/25-psicologia-de-los-procesos-basicos/" class="brand-link">
+                    <i class="fas fa-brain"></i>
+                    <span>Psicología de los Procesos Básicos</span>
+                </a>
+            </div>
+
+            <div class="nav-controls">
+                <!-- Search -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Buscar..." aria-label="Búsqueda">
+                    <button id="search-btn" aria-label="Buscar">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <!-- Theme toggle -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+
+                <!-- Mobile menu toggle -->
+                <button id="menu-toggle" class="menu-toggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" role="complementary" aria-label="Tabla de contenidos">
+        <div class="sidebar-header">
+            <h3>Contenidos</h3>
+        </div>
+
+        <div class="sidebar-content">
+            <nav class="toc" aria-label="Tabla de contenidos">
+                <ol class="toc-list">
+                    <li class="toc-item">
+                        <a href="#introduccion" class="toc-link">
+                            <span class="toc-number">1.</span>
+                            <span class="toc-text">Introducción</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#antecedentes-historicos" class="toc-link">
+                            <span class="toc-number">2.</span>
+                            <span class="toc-text">Antecedentes Históricos</span>
+                        </a>
+                        <ol class="toc-sublist">
+                            <li><a href="#explicaciones-religiosas" class="toc-link">Explicaciones Religiosas</a></li>
+                            <li><a href="#explicaciones-filosoficas" class="toc-link">Explicaciones Filosóficas</a></li>
+                            <li><a href="#explicaciones-artisticas" class="toc-link">Explicaciones Artísticas</a></li>
+                        </ol>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#psicologia-sentido-comun" class="toc-link">
+                            <span class="toc-number">3.</span>
+                            <span class="toc-text">Psicología del Sentido Común</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#obstaculo-aceptacion" class="toc-link">
+                            <span class="toc-number">4.</span>
+                            <span class="toc-text">El Obstáculo de Aceptación</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#metodo-cientifico" class="toc-link">
+                            <span class="toc-number">5.</span>
+                            <span class="toc-text">Método Científico</span>
+                        </a>
+                        <ol class="toc-sublist">
+                            <li><a href="#empirica" class="toc-link">Empírica</a></li>
+                            <li><a href="#publica" class="toc-link">Pública</a></li>
+                            <li><a href="#replicable" class="toc-link">Replicable</a></li>
+                        </ol>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#conclusion" class="toc-link">
+                            <span class="toc-number">6.</span>
+                            <span class="toc-text">Conclusión</span>
+                        </a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- Progress bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/25-psicologia-de-los-procesos-basicos/">Inicio</a>
+                </li>
+                
+                
+                <li class="breadcrumb-item active" aria-current="page">
+                    <span>Deployment Guide</span>
+                </li>
+                
+            </ol>
+        </nav>
+
+        <!-- Content -->
+        <article class="content">
+            <h1 id="deployment-guide">Deployment Guide</h1>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<h3 id="1-install-ruby-windows">1. Install Ruby (Windows)</h3>
+
+<ol>
+  <li>Download Ruby installer from <a href="https://rubyinstaller.org/">RubyInstaller.org</a></li>
+  <li>Download Ruby+Devkit 3.0.0 or higher</li>
+  <li>Run the installer and follow the installation wizard</li>
+  <li>When prompted, install MSYS2 and the development toolchain</li>
+</ol>
+
+<h3 id="2-install-jekyll-and-bundler">2. Install Jekyll and Bundler</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">jekyll</span><span class="w"> </span><span class="nx">bundler</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="3-install-dependencies">3. Install Dependencies</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cd</span><span class="w"> </span><span class="s2">"c:\areas\software engineer\github-repositories\25-psicologia-de-los-procesos-basicos"</span><span class="w">
+</span><span class="n">bundle</span><span class="w"> </span><span class="nx">install</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="local-development">Local Development</h2>
+
+<h3 id="1-start-the-development-server">1. Start the Development Server</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bundle</span><span class="w"> </span><span class="nx">exec</span><span class="w"> </span><span class="nx">jekyll</span><span class="w"> </span><span class="nx">serve</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="2-view-the-site">2. View the Site</h3>
+
+<p>Open your browser to <code class="language-plaintext highlighter-rouge">http://localhost:4000</code></p>
+
+<h3 id="3-live-reload">3. Live Reload</h3>
+
+<p>The site will automatically rebuild when you make changes to the files.</p>
+
+<h2 id="github-pages-deployment">GitHub Pages Deployment</h2>
+
+<h3 id="automatic-deployment">Automatic Deployment</h3>
+
+<ol>
+  <li>Push your code to GitHub</li>
+  <li>Go to your repository settings</li>
+  <li>Navigate to Pages section</li>
+  <li>Set source to “GitHub Actions”</li>
+  <li>The GitHub Action will automatically build and deploy your site</li>
+</ol>
+
+<h3 id="manual-deployment">Manual Deployment</h3>
+
+<ol>
+  <li>Build the site:
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bundle</span><span class="w"> </span><span class="nx">exec</span><span class="w"> </span><span class="nx">jekyll</span><span class="w"> </span><span class="nx">build</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>The built site will be in the <code class="language-plaintext highlighter-rouge">_site</code> folder</li>
+</ol>
+
+<h2 id="configuration">Configuration</h2>
+
+<h3 id="environment-variables">Environment Variables</h3>
+
+<p>Create a <code class="language-plaintext highlighter-rouge">.env</code> file in the root directory:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>JEKYLL_ENV=production
+GOOGLE_ANALYTICS_ID=your-ga-id
+</code></pre></div></div>
+
+<h3 id="site-configuration">Site Configuration</h3>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">_config.yml</code> to customize:</p>
+
+<ul>
+  <li>Site title and description</li>
+  <li>Navigation menu</li>
+  <li>Social links</li>
+  <li>Google Analytics</li>
+  <li>Theme settings</li>
+</ul>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="common-issues">Common Issues</h3>
+
+<ol>
+  <li><strong>Ruby not found</strong>: Ensure Ruby is installed and in your PATH</li>
+  <li><strong>Bundle install fails</strong>: Try <code class="language-plaintext highlighter-rouge">gem install bundler</code> first</li>
+  <li><strong>Port already in use</strong>: Use <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --port 4001</code></li>
+  <li><strong>SSL certificate issues</strong>: Use <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --ssl-cert-dir=_ssl</code></li>
+</ol>
+
+<h3 id="performance-optimization">Performance Optimization</h3>
+
+<ol>
+  <li><strong>Image optimization</strong>: Use WebP format for images</li>
+  <li><strong>CSS minification</strong>: Enable in <code class="language-plaintext highlighter-rouge">_config.yml</code></li>
+  <li><strong>JavaScript minification</strong>: Use Jekyll minifier plugin</li>
+  <li><strong>Caching</strong>: Configure CDN for static assets</li>
+</ol>
+
+<h3 id="development-tips">Development Tips</h3>
+
+<ol>
+  <li>Use <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code> to preview draft posts</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --livereload</code> for automatic browser refresh</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">bundle exec jekyll build --profile</code> to analyze build performance</li>
+</ol>
+
+<h2 id="maintenance">Maintenance</h2>
+
+<h3 id="regular-updates">Regular Updates</h3>
+
+<ol>
+  <li>Update Ruby gems: <code class="language-plaintext highlighter-rouge">bundle update</code></li>
+  <li>Update Jekyll: <code class="language-plaintext highlighter-rouge">gem update jekyll</code></li>
+  <li>Check for security updates: <code class="language-plaintext highlighter-rouge">bundle audit</code></li>
+</ol>
+
+<h3 id="backup">Backup</h3>
+
+<ol>
+  <li>Backup your <code class="language-plaintext highlighter-rouge">_config.yml</code> file</li>
+  <li>Backup your content in <code class="language-plaintext highlighter-rouge">_sections/</code> folder</li>
+  <li>Backup your custom CSS/JS files</li>
+</ol>
+
+<h2 id="support">Support</h2>
+
+<p>For issues with:</p>
+<ul>
+  <li>Jekyll: <a href="https://jekyllrb.com/docs/">Jekyll Documentation</a></li>
+  <li>GitHub Pages: <a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a></li>
+  <li>Ruby: <a href="https://www.ruby-lang.org/en/documentation/">Ruby Documentation</a></li>
+</ul>
+
+        </article>
+
+        <!-- Navigation buttons -->
+        <nav class="content-nav" aria-label="Navegación de contenido">
+            
+
+            
+        </nav>
+    </main>
+
+    <!-- Search results -->
+    <div id="search-results" class="search-results" role="region" aria-label="Resultados de búsqueda">
+        <div class="search-results-header">
+            <h3>Resultados de búsqueda</h3>
+            <button id="close-search" class="close-search" aria-label="Cerrar búsqueda">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="search-results-content" id="search-results-content">
+            <!-- Search results will be populated here -->
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Scripts -->
+    <script src="/25-psicologia-de-los-procesos-basicos/assets/js/main.js"></script>
+
+    <!-- Analytics -->
+    
+</body>
+
+</html>
