@@ -82,7 +82,7 @@ Para diferenciarse del sentido común y establecerse como una ciencia legítima,
     </div>
 
     <div class="principle-content">
-        <p>De nada sirve hacer un descubrimiento si te lo guardas para ti. <strong>El conocimiento científico debe ser compartido y sometido al escrutinio de otros expertos</strong>.</p>
+        <p>De nada sirve hacer un descubrimiento si te lo guardas para ti. <strong>El conocimiento científico debe ser compartido y sometido al escrutinio de otros expertos</strong>. Este principio garantiza la transparencia y la validación colectiva del conocimiento.</p>
 
         <div class="publication-process">
             <h3>¿Cómo se hace público el conocimiento?</h3>
@@ -90,14 +90,195 @@ Para diferenciarse del sentido común y establecerse como una ciencia legítima,
                 <div class="process-step">
                     <div class="step-icon">📋</div>
                     <h4>Investigación</h4>
-                    <p>Se realiza el estudio siguiendo métodos rigurosos</p>
+                    <p>Se realiza el estudio siguiendo métodos rigurosos y documentados</p>
                 </div>
                 <div class="process-step">
                     <div class="step-icon">📝</div>
                     <h4>Redacción</h4>
-                    <p>Se escribe un artículo científico detallado</p>
+                    <p>Se escribe un artículo científico detallado con metodología, resultados y conclusiones</p>
                 </div>
                 <div class="process-step">
+                    <div class="step-icon">🏛️</div>
+                    <h4>Presentación</h4>
+                    <p>Los hallazgos se presentan en <strong>congresos científicos</strong> especializados</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">📚</div>
+                    <h4>Publicación</h4>
+                    <p>Se publican en <strong>revistas científicas especializadas</strong> de alto impacto</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="peer-review-section">
+            <h3>🔍 Revisión por Pares: El Filtro de Calidad</h3>
+            <p>Antes de que un estudio se publique, pasa por un proceso riguroso de <strong>revisión por pares</strong>:</p>
+
+            <div class="peer-review-process">
+                <div class="review-step">
+                    <h4>Evaluación Anónima</h4>
+                    <p>Otros científicos del mismo campo (<strong>pares</strong>) revisan el trabajo de forma anónima y crítica</p>
+                </div>
+                <div class="review-step">
+                    <h4>Criterios de Evaluación</h4>
+                    <ul>
+                        <li><strong>Rigor metodológico:</strong> ¿Los métodos son apropiados?</li>
+                        <li><strong>Originalidad:</strong> ¿Aporta conocimiento nuevo?</li>
+                        <li><strong>Validez:</strong> ¿Las conclusiones están justificadas?</li>
+                        <li><strong>Relevancia:</strong> ¿Es importante para el campo?</li>
+                    </ul>
+                </div>
+                <div class="review-step">
+                    <h4>Proceso Iterativo</h4>
+                    <p>Los autores deben responder a las críticas y realizar modificaciones antes de la publicación</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="continuous-review">
+            <h3>⚖️ Revisión Continua</h3>
+            <p>El proceso de escrutinio <strong>no termina con la publicación</strong>:</p>
+
+            <div class="continuous-elements">
+                <div class="element-item">
+                    <span class="element-icon">🔄</span>
+                    <h4>Replicación</h4>
+                    <p>Otros investigadores intentan reproducir los resultados</p>
+                </div>
+                <div class="element-item">
+                    <span class="element-icon">💬</span>
+                    <h4>Debate Científico</h4>
+                    <p>Se publican comentarios, críticas y respuestas</p>
+                </div>
+                <div class="element-item">
+                    <span class="element-icon">📊</span>
+                    <h4>Meta-análisis</h4>
+                    <p>Se integran múltiples estudios para obtener conclusiones más robustas</p>
+                </div>
+                <div class="element-item">
+                    <span class="element-icon">🚫</span>
+                    <h4>Retractaciones</h4>
+                    <p>Si nueva evidencia demuestra errores, las publicaciones pueden ser retractadas</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="transparency-benefits">
+            <h3>✨ Beneficios de la Transparencia</h3>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <strong>Control de Calidad:</strong> El escrutinio múltiple detecta errores y sesgos
+                </div>
+                <div class="benefit-item">
+                    <strong>Acumulación de Conocimiento:</strong> Cada estudio construye sobre el anterior
+                </div>
+                <div class="benefit-item">
+                    <strong>Confianza Pública:</strong> La transparencia genera credibilidad en la ciencia
+                </div>
+                <div class="benefit-item">
+                    <strong>Avance Colectivo:</strong> El conocimiento pertenece a toda la humanidad
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+## 3. Repetible o Replicable
+
+<div class="principle-section replicable">
+    <div class="principle-header">
+        <div class="principle-icon">🔄</div>
+        <h2>Principio de Replicabilidad</h2>
+        <p class="principle-subtitle">La prueba definitiva de la validez científica</p>
+    </div>
+
+    <div class="principle-content">
+        <p>Un solo estudio, por muy bien hecho que esté, <strong>no es suficiente</strong>. Los resultados deben poder confirmarse independientemente por otros investigadores. Este es el principio más exigente de la ciencia.</p>
+
+        <div class="replication-meaning">
+            <h3>🎯 ¿Qué significa "Replicable"?</h3>
+            <p>Si otro grupo de investigadores, <strong>en otra parte del mundo</strong>, sigue los mismos pasos del estudio original, deberían llegar a <strong>resultados similares</strong>.</p>
+
+            <div class="replication-requirements">
+                <h4>Requisitos para la Replicación:</h4>
+                <ul>
+                    <li><strong>Métodos explícitos:</strong> Descripción detallada y precisa de todos los procedimientos</li>
+                    <li><strong>Materiales accesibles:</strong> Instrumentos, cuestionarios y estímulos disponibles</li>
+                    <li><strong>Análisis transparente:</strong> Código estadístico y criterios de interpretación</li>
+                    <li><strong>Condiciones controladas:</strong> Especificación de variables y contextos</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="falsification-section">
+            <h3>⚔️ La Clave: Falsificación</h3>
+            <p>Los científicos no solo intentan <strong>replicar</strong> los hallazgos, sino también <strong>falsearlos</strong>. Este proceso, conocido como <strong>falsificación</strong>, es fundamental para el avance científico.</p>
+
+            <div class="falsification-process">
+                <div class="falsification-step">
+                    <h4>Hipótesis Alternativas</h4>
+                    <p>Se formulan explicaciones alternativas para los mismos fenómenos</p>
+                </div>
+                <div class="falsification-step">
+                    <h4>Diseños Críticos</h4>
+                    <p>Se diseñan experimentos que pueden refutar la teoría original</p>
+                </div>
+                <div class="falsification-step">
+                    <h4>Prueba de Límites</h4>
+                    <p>Se exploran las condiciones bajo las cuales la teoría falla</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="robustness-building">
+            <h3>🏗️ Construcción de Robustez</h3>
+            <p>La replicación exitosa y la resistencia a la falsificación construyen <strong>robustez científica</strong>:</p>
+
+            <div class="robustness-elements">
+                <div class="robustness-item">
+                    <span class="robustness-icon">🌍</span>
+                    <h4>Generalización</h4>
+                    <p>Los resultados se mantienen en diferentes poblaciones y contextos</p>
+                </div>
+                <div class="robustness-item">
+                    <span class="robustness-icon">⏰</span>
+                    <h4>Estabilidad Temporal</h4>
+                    <p>Los efectos persisten a lo largo del tiempo</p>
+                </div>
+                <div class="robustness-item">
+                    <span class="robustness-icon">🔧</span>
+                    <h4>Independencia Metodológica</h4>
+                    <p>Los resultados aparecen con diferentes métodos de investigación</p>
+                </div>
+                <div class="robustness-item">
+                    <span class="robustness-icon">🎯</span>
+                    <h4>Precisión Creciente</h4>
+                    <p>Con cada replicación, se refina la comprensión del fenómeno</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="crisis-replication">
+            <h3>⚠️ Crisis de Replicación</h3>
+            <p>La psicología ha enfrentado una <strong>"crisis de replicación"</strong> donde muchos estudios clásicos no se han podido replicar. Esto ha llevado a:</p>
+
+            <div class="crisis-responses">
+                <div class="response-item">
+                    <strong>Estándares más rigurosos:</strong> Mayor exigencia en diseño experimental
+                </div>
+                <div class="response-item">
+                    <strong>Pre-registro:</strong> Declaración anticipada de hipótesis y métodos
+                </div>
+                <div class="response-item">
+                    <strong>Datos abiertos:</strong> Compartir datos para verificación independiente
+                </div>
+                <div class="response-item">
+                    <strong>Replicaciones directas:</strong> Proyectos dedicados específicamente a replicar estudios
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
                     <div class="step-icon">🎯</div>
                     <h4>Presentación</h4>
                     <p>Se presenta en congresos académicos</p>

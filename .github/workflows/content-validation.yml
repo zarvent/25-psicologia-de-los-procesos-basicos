@@ -1,0 +1,85 @@
+name: Content Integrity Validation
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'materia-prima.md'
+      - '_sections/**/*.md'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'materia-prima.md'
+      - '_sections/**/*.md'
+
+jobs:
+  validate-content:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Validate content integrity
+      run: |
+        echo "🔍 Validating content fidelity..."
+        node scripts/sync-content.js validate
+
+    - name: Check for content drift
+      run: |
+        echo "📊 Checking for content drift..."
+        if node scripts/sync-content.js validate; then
+          echo "✅ Content integrity verified"
+        else
+          echo "❌ Content integrity validation failed"
+          echo "Run 'node scripts/sync-content.js sync' to fix synchronization issues"
+          exit 1
+        fi
+
+    - name: Generate content report
+      run: |
+        echo "📋 Generating content report..."
+        echo "## Content Validation Report" >> $GITHUB_STEP_SUMMARY
+        echo "- **Source file**: materia-prima.md" >> $GITHUB_STEP_SUMMARY
+        echo "- **Validation time**: $(date)" >> $GITHUB_STEP_SUMMARY
+        echo "- **Status**: ✅ Passed" >> $GITHUB_STEP_SUMMARY
+
+  sync-content:
+    runs-on: ubuntu-latest
+    needs: validate-content
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Synchronize content
+      run: |
+        echo "🔄 Synchronizing content..."
+        node scripts/sync-content.js sync
+
+    - name: Commit synchronized content
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add _sections/
+        git diff --staged --quiet || git commit -m "🔄 Auto-sync: Update section content from source [skip ci]"
+        git push

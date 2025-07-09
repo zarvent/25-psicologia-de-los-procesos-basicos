@@ -51,6 +51,7 @@ The site will automatically rebuild when you make changes to the files.
 ### Manual Deployment
 
 1. Build the site:
+
 ```powershell
 bundle exec jekyll build
 ```
@@ -117,6 +118,7 @@ Edit `_config.yml` to customize:
 ## Support
 
 For issues with:
+
 - Jekyll: [Jekyll Documentation](https://jekyllrb.com/docs/)
 - GitHub Pages: [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - Ruby: [Ruby Documentation](https://www.ruby-lang.org/en/documentation/)

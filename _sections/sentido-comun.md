@@ -7,46 +7,125 @@ order: 3
 
 # Psicología del Sentido Común
 
-Esta no es una teoría científica, sino **la forma en que todos, en nuestro día a día, intentamos ser psicólogos**. Nos la pasamos creando teorías para explicar:
+Esta no es una teoría científica, sino **la forma en que todos, en nuestro día a día, intentamos ser psicólogos**. Nos la pasamos creando teorías para explicar el comportamiento humano, desarrollando un sistema intuitivo de comprensión psicológica que utilizamos constantemente en nuestras interacciones sociales.
 
 ## Las Grandes Preguntas Cotidianas
+
+En nuestra vida diaria, nos convertimos en **detectives de la mente** cuando intentamos descifrar:
 
 <div class="question-grid">
     <div class="question-card">
         <div class="question-icon">🤔</div>
         <h3>¿Por qué la gente hace lo que hace?</h3>
-        <p>Intentamos descifrar las motivaciones detrás de las acciones</p>
+        <p>Constantemente buscamos patrones y explicaciones causales para las acciones de otros, creando teorías sobre motivaciones, intenciones y objetivos</p>
     </div>
 
     <div class="question-card">
         <div class="question-icon">💭</div>
         <h3>¿Cómo piensan los demás?</h3>
-        <p>Tratamos de entender los procesos mentales de otros</p>
+        <p>Desarrollamos modelos mentales sobre los procesos cognitivos de otros, prediciendo sus decisiones y reacciones</p>
     </div>
 
     <div class="question-card">
         <div class="question-icon">❤️</div>
         <h3>¿Qué sienten?</h3>
-        <p>Nos preguntamos sobre las emociones y sentimientos</p>
+        <p>Interpretamos expresiones faciales, lenguaje corporal y tonos de voz para comprender estados emocionales internos</p>
     </div>
 
     <div class="question-card">
         <div class="question-icon">💬</div>
         <h3>¿Por qué hablan de esa manera?</h3>
-        <p>Analizamos el lenguaje y la comunicación</p>
+        <p>Analizamos el lenguaje como ventana hacia la personalidad, el estado mental y las intenciones comunicativas</p>
     </div>
 </div>
 
-## Características del Sentido Común
+## Fundamentos de Nuestras "Teorías" Cotidianas
+
+<div class="foundations-section">
+    <div class="foundation-item">
+        <h3>📚 Experiencia Personal</h3>
+        <p>Nuestras vivencias directas forman la base de nuestro entendimiento psicológico. <strong>Proyectamos nuestras experiencias internas</strong> para comprender a otros, asumiendo que sus procesos mentales son similares a los nuestros.</p>
+    </div>
+
+    <div class="foundation-item">
+        <h3>🌍 Aprendizaje Cultural</h3>
+        <p>Absorbemos <strong>modelos culturales de comportamiento</strong> que nos proporcionan marcos interpretativos: roles de género, estereotipos sociales, normas grupales y expectativas culturales.</p>
+    </div>
+
+    <div class="foundation-item">
+        <h3>⚡ Procesamiento Automático</h3>
+        <p>Estas teorías son <strong>creencias implícitas</strong> que operan de manera casi automática. No las cuestionamos conscientemente; simplemente las aplicamos de forma intuitiva en nuestras interacciones.</p>
+    </div>
+</div>
+
+## Características del Sentido Común Psicológico
 
 <div class="characteristics-section">
     <div class="characteristic">
         <div class="characteristic-header">
             <span class="characteristic-icon">🏠</span>
-            <h3>Basado en Experiencia Personal</h3>
+            <h3>Naturaleza Pragmática</h3>
         </div>
-        <p>Utilizamos nuestras vivencias como base para entender a otros</p>
+        <p>Nuestras teorías no buscan la verdad científica, sino la <strong>funcionalidad social</strong>. Nos ayudan a navegar relaciones, predecir comportamientos y tomar decisiones sociales efectivas.</p>
     </div>
+
+    <div class="characteristic">
+        <div class="characteristic-header">
+            <span class="characteristic-icon">🎯</span>
+            <h3>Orientación Predictiva</h3>
+        </div>
+        <p>Desarrollamos estas teorías para <strong>anticipar y controlar</strong> nuestro entorno social. Buscamos patrones que nos permitan prever cómo reaccionarán otros en diferentes situaciones.</p>
+    </div>
+
+    <div class="characteristic">
+        <div class="characteristic-header">
+            <span class="characteristic-icon">🔄</span>
+            <h3>Flexibilidad Situacional</h3>
+        </div>
+        <p>Aunque tenemos teorías generales, las <strong>adaptamos contextualmente</strong>. Aplicamos diferentes marcos interpretativos según la situación, la relación y el momento.</p>
+    </div>
+</div>
+
+## Ejemplos de Teorías del Sentido Común
+
+<div class="examples-section">
+    <div class="example-category">
+        <h3>🎭 Teorías sobre Personalidad</h3>
+        <ul>
+            <li><strong>"Las personas introvertidas son más inteligentes"</strong> - Asociación entre retraimiento social y capacidad intelectual</li>
+            <li><strong>"Los gemelos tienen conexión especial"</strong> - Creencia en vínculos psíquicos entre hermanos gemelos</li>
+            <li><strong>"Las primeras impresiones son las correctas"</strong> - Confianza en juicios rápidos sobre carácter</li>
+        </ul>
+    </div>
+
+    <div class="example-category">
+        <h3>⚖️ Teorías sobre Justicia y Comportamiento</h3>
+        <ul>
+            <li><strong>"Las personas obtienen lo que merecen"</strong> - Creencia en un mundo justo</li>
+            <li><strong>"Los opuestos se atraen"</strong> - Teoría sobre compatibilidad en relaciones</li>
+            <li><strong>"La gente no cambia"</strong> - Permanencia de patrones comportamentales</li>
+        </ul>
+    </div>
+</div>
+
+## Funciones Adaptativas del Sentido Común
+
+<div class="functions-section">
+    <div class="function-card">
+        <h3>🛡️ Reducción de Incertidumbre</h3>
+        <p>Nos proporcionan <strong>marcos interpretativos</strong> que reducen la ansiedad de lo desconocido, ofreciendo explicaciones inmediatas para comportamientos complejos.</p>
+    </div>
+
+    <div class="function-card">
+        <h3>🤝 Facilitación Social</h3>
+        <p>Permiten <strong>coordinación social eficiente</strong> al crear expectativas compartidas sobre comportamiento y permitir predicciones mutuas.</p>
+    </div>
+
+    <div class="function-card">
+        <h3>💡 Toma de Decisiones Rápida</h3>
+        <p>Ofrecen <strong>atajos cognitivos</strong> (heurísticas) que nos permiten tomar decisiones sociales sin análisis exhaustivo, optimizando nuestro tiempo y energía mental.</p>
+    </div>
+</div>
 
     <div class="characteristic">
         <div class="characteristic-header">

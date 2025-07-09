@@ -10,40 +10,40 @@ icon: "🧠"
 
 La psicología de los procesos básicos es la **disciplina científica que estudia la mente**: qué hay en ella y cómo funciona. Se enfoca en procesos como la percepción, la atención, la memoria, el pensamiento, el lenguaje, la motivación y la emoción.
 
-## Campos de Estudio
+## Campos de Estudio Fundamentales
 
-La psicología de los procesos básicos abarca múltiples áreas fundamentales:
+La psicología de los procesos básicos abarca múltiples áreas fundamentales que constituyen la base de nuestra comprensión de la mente humana:
 
 <div class="process-grid">
     <div class="process-card">
         <div class="process-icon">👁️</div>
         <h3>Percepción</h3>
-        <p>Cómo interpretamos la información sensorial</p>
+        <p>Cómo interpretamos la información sensorial del mundo que nos rodea</p>
     </div>
     <div class="process-card">
         <div class="process-icon">🎯</div>
         <h3>Atención</h3>
-        <p>Cómo enfocamos nuestra conciencia</p>
+        <p>Los mecanismos por los cuales enfocamos selectivamente nuestra conciencia</p>
     </div>
     <div class="process-card">
         <div class="process-icon">💭</div>
         <h3>Memoria</h3>
-        <p>Cómo almacenamos y recuperamos información</p>
+        <p>Los procesos de codificación, almacenamiento y recuperación de información</p>
     </div>
     <div class="process-card">
         <div class="process-icon">🧠</div>
         <h3>Pensamiento</h3>
-        <p>Cómo procesamos y razonamos</p>
+        <p>Los procesos cognitivos superiores: razonamiento, resolución de problemas</p>
     </div>
     <div class="process-card">
         <div class="process-icon">💬</div>
         <h3>Lenguaje</h3>
-        <p>Cómo comunicamos y comprendemos</p>
+        <p>Los sistemas complejos de comunicación simbólica y comprensión</p>
     </div>
     <div class="process-card">
         <div class="process-icon">⚡</div>
         <h3>Motivación</h3>
-        <p>Qué nos impulsa a actuar</p>
+        <p>Las fuerzas internas y externas que dirigen nuestro comportamiento</p>
     </div>
     <div class="process-card">
         <div class="process-icon">❤️</div>
