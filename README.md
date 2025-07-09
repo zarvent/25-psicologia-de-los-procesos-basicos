@@ -1,116 +1,113 @@
-🧠 Psicología y Código: Un Experimento Visual
-¡Hola! Este es un pequeño repositorio que busca exponer el material que leo y estudio. No es una aplicación compleja, sino más bien un ejercicio de cómo podemos usar la tecnología para presentar y divulgar conocimiento de una forma diferente.
+<!--
+README.md optimizado al máximo nivel de Markdown, con secciones visuales, tablas, badges, detalles colapsables y diagramas ASCII para una experiencia de lectura memorable y profesional.
+-->
+
+<h1 align="center">🧠 Psicología y Código: Un Experimento Visual</h1>
 
 <p align="center">
-<a href="https://zarvent.github.io/25-psicologia-de-los-procesos-basicos/" title="Ver Proyecto">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Ver_Proyecto_en_Vivo-23a6d5%3Fstyle%3Dfor-the-badge%26logo%3Dgoogle-chrome%26logoColor%3Dwhite" alt="Ver Proyecto en Vivo"/>
-</a>
+  <a href="https://zarvent.github.io/25-psicologia-de-los-procesos-basicos/" title="Ver Proyecto">
+    <img src="https://img.shields.io/badge/Ver_Proyecto_en_Vivo-23a6d5?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Ver Proyecto en Vivo"/>
+  </a>
+  <img src="https://img.shields.io/github/workflow/status/zarvent/25-psicologia-de-los-procesos-basicos/Deploy%20to%20GitHub%20Pages?label=Deploy&style=for-the-badge" alt="Deploy Status"/>
+  <img src="https://img.shields.io/github/license/zarvent/25-psicologia-de-los-procesos-basicos?style=for-the-badge" alt="License"/>
 </p>
 
-🛠️ ¿Cómo está hecho? (La Parte Técnica)
-La filosofía detrás del código fue mantenerlo lo más simple y ligero posible. No hay frameworks pesados ni pasos de compilación complejos.
+---
 
-Tecnología
+---
 
-Propósito
+## 🚀 ¿Cómo está hecho? (La Parte Técnica)
 
-🌐 HTML5
+| Tecnología         | Propósito                                                                 |
+|-------------------|--------------------------------------------------------------------------|
+| 🌐 **HTML5**      | Estructura semántica, accesibilidad (a11y) y SEO                         |
+| 🎨 **TailwindCSS**| Diseño utility-first, responsivo y consistente                            |
+| ✨ **JavaScript**  | Animaciones sutiles (IntersectionObserver) para mejorar la experiencia   |
+| 🤖 **GitHub Actions** | CI/CD: despliegue automático a GitHub Pages en cada push a `main`     |
 
-Se usó HTML semántico para estructurar el contenido, mejorando la accesibilidad (a11y) y el SEO.
+---
 
-🎨 Tailwind CSS
+## 🗂️ Flujo del Contenido
 
-Un framework "utility-first" para un diseño rápido, consistente y completamente responsivo.
+```mermaid
+flowchart TD
+    A[✍️ materia-prima.md] --> B[🖼️ articulo.html]
+    B --> C[🏠 index.html]
+```
 
-✨ JavaScript (Puro)
+- **Materia Prima**: Todo el contenido académico vive en `materia-prima.md` (Markdown editable).
+- **Presentación**: `articulo.html` da formato visual y añade interacciones.
+- **Portada**: `index.html` es la bienvenida y punto de entrada.
 
-Un toque de JS para animaciones sutiles (IntersectionObserver) que mejoran la experiencia sin sacrificar rendimiento.
+---
 
-🚀 GitHub Actions
+## 🔭 ¿Qué vas a encontrar?
 
-Un flujo de CI/CD que despliega automáticamente cada cambio de la rama main a GitHub Pages.
+- 🎨 **Diseño limpio**: Lectura cómoda y sin distracciones.
+- 📊 **Visualizaciones**: Gráficos SVG para conceptos clave.
+- ⚡ **Carga rápida**: Sin grandes librerías, máxima velocidad.
+- 📖 **Código abierto**: Simple, claro y reutilizable.
 
-El Flujo del Contenido
-El proceso es bastante directo y separa el contenido de la presentación:
+---
 
-✍️ La "Materia Prima" (materia-prima.md): Todo el contenido académico vive en un archivo Markdown. Esto es genial porque permite que un experto en la materia pueda editar el texto fácilmente sin tocar una sola línea de código.
+## 💡 Ideas para el futuro
 
-🖼️ La Presentación (articulo.html): Este archivo HTML toma el contenido del Markdown y le da formato. Aquí es donde se añaden los colores, las tipografías, los iconos y las pequeñas interacciones.
+- [ ] Añadir más información y recursos.
+- [ ] Crear un mazo de Anki para repaso.
+- [ ] Hacerlo multilingüe (es/en).
+- [ ] Conectar un Headless CMS.
+- [ ] Crear Web Components reutilizables.
 
-🚪 La Portada (index.html): Una página de bienvenida sencilla que presenta el proyecto y te invita a leer el artículo.
+---
 
-🔭 ¿Qué vas a encontrar?
-🎨 Un diseño limpio: Pensado para que la lectura sea cómoda y sin distracciones.
+## 🙌 ¿Quieres usarlo o proponer mejoras?
 
-📊 Pequeñas visualizaciones: Algunos conceptos se apoyan en gráficos SVG para hacerlos más fáciles de digerir.
-
-⚡ Carga rápida: Al no tener grandes librerías, la página carga muy rápido.
-
-📖 Código abierto y simple: El código está aquí para que cualquiera pueda verlo, usarlo o inspirarse en él.
-
-🚀 Ideas para el futuro (o para quien quiera colaborar)
-Aunque este es un proyecto pequeño, siempre hay espacio para crecer. Si a alguien le inspira, aquí hay una lista de ideas:
-
-[ ] Añadir más información: Se podrían agregar nuevas cosas que puedan pulir y mejorar el contenido de la pagina.
-
-[ ] Crear un mazo de Anki: Un mazo descargable para repasar los conceptos clave mediante repetición espaciada.
-
-[ ] Hacerlo multilingüe: Ofrecer el mismo contenido en otros idiomas, como inglés.
-
-[ ] Conectar un CMS: Para que la gestión del contenido sea aún más fácil, se podría conectar a un CMS sin cabeza (Headless CMS).
-
-[ ] Crear componentes reutilizables: Las "tarjetas" o los diagramas podrían convertirse en Web Components para usarlos en otros proyectos.
-
-🙌 ¿Quieres usarlo o proponer mejoras?
-¡Adelante! Siéntete libre de clonar el repositorio, experimentar con él o proponer cualquier cambio. Toda idea es bienvenida.
+¡Adelante! Clona, experimenta o contribuye. Toda idea es bienvenida.
 
 <details>
-<summary><strong>Haz clic aquí para ver cómo probarlo en tu máquina</strong></summary>
+<summary><strong>▶️ Cómo probarlo en tu máquina</strong></summary>
 
-Para probarlo localmente
-Clona el repositorio:
+```bash
+# Clona el repositorio
+ git clone https://github.com/zarvent/25-psicologia-de-los-procesos-basicos.git
+ cd 25-psicologia-de-los-procesos-basicos
 
-git clone [https://github.com/zarvent/25-psicologia-de-los-procesos-basicos.git](https://github.com/zarvent/25-psicologia-de-los-procesos-basicos.git)
-cd 25-psicologia-de-los-procesos-basicos
+# Abre los archivos directamente
+ index.html
+ articulo.html
 
-Abre los archivos:
-Puedes abrir index.html o articulo.html directamente en tu navegador.
-
-(Opcional) Usa un servidor local:
-Para una experiencia más realista, puedes levantar un servidor local simple. Si tienes Python:
-
-# Para Python 3
-
-python -m http.server
-
-Y luego visitas <http://localhost:8000> en tu navegador.
+# (Opcional) Servidor local con Python 3
+ python -m http.server
+# Luego visita http://localhost:8000
+```
 
 </details>
 
 <details>
-<summary><strong>Haz clic aquí para ver cómo contribuir</strong></summary>
+<summary><strong>🤝 Cómo contribuir</strong></summary>
 
-Flujo de Contribución
-La forma más sencilla es seguir el flujo estándar de GitHub:
-
-Haz un "Fork" del repositorio.
-
-Crea una nueva rama para tu funcionalidad o corrección (git checkout -b feature/mi-idea-genial).
-
-Realiza tus cambios y haz commit de ellos con mensajes claros.
-
-Haz push a tu rama (git push origin feature/mi-idea-genial).
-
-Abre un "Pull Request" hacia la rama main del repositorio original.
+1. Haz un **Fork** del repositorio.
+2. Crea una rama: `git checkout -b feature/mi-idea-genial`
+3. Realiza tus cambios y haz commit.
+4. Haz push: `git push origin feature/mi-idea-genial`
+5. Abre un **Pull Request** hacia `main`.
 
 </details>
 
-📂 Estructura del Repositorio
+---
+
+## 📂 Estructura del Repositorio
+
+```text
 .
 ├── .github/
 │   └── workflows/
-│       └── gh-pages.yml      # 🤖 El flujo que despliega el sitio
-├── articulo.html             # 📄 El artículo principal
-├── index.html                # 🏠 La página de bienvenida
-├── materia-prima.md          # ✍️ El texto académico original
-└── README.md                 # Este archivo que estás leyendo
+│       └── gh-pages.yml      # 🤖 CI/CD para despliegue
+├── articulo.html             # 📄 Artículo principal
+├── index.html                # 🏠 Portada
+├── materia-prima.md          # ✍️ Contenido académico
+├── .nojekyll                 # 🚫 Desactiva Jekyll
+└── README.md                 # 📘 Este archivo
+```
+
+---
