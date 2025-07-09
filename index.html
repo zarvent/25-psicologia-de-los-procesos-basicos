@@ -1,670 +1,86 @@
----
-layout: default
-title: "Inicio"
-description: "Un libro digital interactivo sobre la psicología de los procesos básicos"
----
+<!DOCTYPE html>
+<html lang="es">
 
-<div class="home-layout">
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Psicología de los Procesos Básicos</h1>
-                <p class="hero-subtitle">Un libro digital interactivo sobre la ciencia de la mente</p>
-                <p class="hero-description">
-                    Explora la disciplina científica que estudia la mente: qué hay en ella y cómo funciona.
-                    Descubre los procesos de percepción, atención, memoria, pensamiento, lenguaje, motivación y emoción.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación | Psicología de los Procesos Básicos</title>
+
+    <!-- Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Aplicamos la fuente Inter como predeterminada */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Pequeño efecto de gradiente animado para el fondo */
+        .gradient-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body class="gradient-bg text-white">
+
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+
+        <div
+            class="w-full max-w-3xl text-center bg-black bg-opacity-30 backdrop-blur-lg rounded-2xl p-8 md:p-16 shadow-2xl border border-white border-opacity-20">
+
+            <!-- Encabezado principal -->
+            <header>
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4">
+                    Psicología de los Procesos Básicos
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+                    Un análisis profundo sobre los mecanismos fundamentales que rigen nuestra percepción, atención,
+                    memoria y aprendizaje.
                 </p>
-                <div class="hero-actions">
-                    <a href="reader.html" class="btn btn-primary">
-                        Leer Contenido Completo
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                    <a href="{{ '/sections/introduccion/' | relative_url }}" class="btn btn-secondary">
-                        Explorar por Secciones
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-                            <path d="M10 17l5-5-5-5" />
-                        </svg>
-                    </a>
-                    <a href="about.html" class="btn btn-outline">
-                        Sobre el Proyecto
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="3"></circle>
-                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="brain-diagram">
-                    <div class="brain-section perception">
-                        <span class="brain-label">Percepción</span>
-                        <div class="brain-icon">👁️</div>
-                    </div>
-                    <div class="brain-section attention">
-                        <span class="brain-label">Atención</span>
-                        <div class="brain-icon">🎯</div>
-                    </div>
-                    <div class="brain-section memory">
-                        <span class="brain-label">Memoria</span>
-                        <div class="brain-icon">💭</div>
-                    </div>
-                    <div class="brain-section thinking">
-                        <span class="brain-label">Pensamiento</span>
-                        <div class="brain-icon">🧠</div>
-                    </div>
-                    <div class="brain-section language">
-                        <span class="brain-label">Lenguaje</span>
-                        <div class="brain-icon">💬</div>
-                    </div>
-                    <div class="brain-section motivation">
-                        <span class="brain-label">Motivación</span>
-                        <div class="brain-icon">⚡</div>
-                    </div>
-                    <div class="brain-section emotion">
-                        <span class="brain-label">Emoción</span>
-                        <div class="brain-icon">❤️</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            </header>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="features-content">
-            <div class="section-header">
-                <h2>¿Por qué este libro digital?</h2>
-                <p>Una experiencia de aprendizaje diseñada para el siglo XXI</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 2L2 7v10c0 5.55 3.84 10 9 10 1.9 0 3.7-.3 5.3-.8" />
-                            <path d="M22 12.66c0 5.5-4.5 10-10 10" />
-                            <circle cx="12" cy="12" r="3" />
-                        </svg>
-                    </div>
-                    <h3>Enfoque Científico</h3>
-                    <p>Basado en evidencia empírica y métodos rigurosos de investigación</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                    </div>
-                    <h3>Interactivo</h3>
-                    <p>Navegación intuitiva, búsqueda avanzada y elementos multimedia</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                        </svg>
-                    </div>
-                    <h3>Accesible</h3>
-                    <p>Optimizado para todos los dispositivos y usuarios</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                        </svg>
-                    </div>
-                    <h3>Gratuito</h3>
-                    <p>Conocimiento académico de calidad sin barreras económicas</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- Separador visual -->
+            <div class="my-8 h-px bg-gray-400 w-1/4 mx-auto"></div>
 
-    <!-- Content Overview -->
-    <section id="overview" class="content-overview">
-        <div class="overview-content">
-            <div class="section-header">
-                <h2>Contenido del Libro</h2>
-                <p>Un recorrido completo por la psicología científica</p>
-            </div>
-            <div class="chapters-grid">
-                <div class="chapter-card">
-                    <div class="chapter-number">01</div>
-                    <div class="chapter-content">
-                        <h3>Introducción</h3>
-                        <p>¿Qué es la psicología de los procesos básicos y por qué es importante?</p>
-                        <a href="{{ '/sections/introduccion/' | relative_url }}" class="chapter-link">Leer capítulo</a>
-                    </div>
-                </div>
-                <div class="chapter-card">
-                    <div class="chapter-number">02</div>
-                    <div class="chapter-content">
-                        <h3>Historia y Antecedentes</h3>
-                        <p>Cómo la humanidad ha intentado entender la mente a lo largo de la historia</p>
-                        <a href="{{ '/sections/historia/' | relative_url }}" class="chapter-link">Leer capítulo</a>
-                    </div>
-                </div>
-                <div class="chapter-card">
-                    <div class="chapter-number">03</div>
-                    <div class="chapter-content">
-                        <h3>Psicología del Sentido Común</h3>
-                        <p>Cómo todos intentamos entender la mente humana en nuestro día a día</p>
-                        <a href="{{ '/sections/sentido-comun/' | relative_url }}" class="chapter-link">Leer capítulo</a>
-                    </div>
-                </div>
-                <div class="chapter-card">
-                    <div class="chapter-number">04</div>
-                    <div class="chapter-content">
-                        <h3>El Obstáculo</h3>
-                        <p>Los desafíos únicos que enfrenta la psicología para ser reconocida como ciencia</p>
-                        <a href="{{ '/sections/obstaculo/' | relative_url }}" class="chapter-link">Leer capítulo</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Scientific Method Section -->
-    <section class="scientific-method">
-        <div class="method-content">
-            <div class="method-visual">
-                <div class="method-diagram">
-                    <div class="method-step">
-                        <div class="step-icon">🔬</div>
-                        <h3>Empírica</h3>
-                        <p>Basada en observación y experimentación sistemática</p>
-                    </div>
-                    <div class="method-step">
-                        <div class="step-icon">🌍</div>
-                        <h3>Pública</h3>
-                        <p>Conocimiento compartido y sometido a revisión por pares</p>
-                    </div>
-                    <div class="method-step">
-                        <div class="step-icon">🔄</div>
-                        <h3>Replicable</h3>
-                        <p>Resultados que pueden ser confirmados por otros investigadores</p>
-                    </div>
-                </div>
-            </div>
-            <div class="method-text">
-                <h2>Los Tres Principios de la Psicología Científica</h2>
-                <p>Para diferenciarse del sentido común y ser considerada una ciencia, la psicología adoptó un método
-                    riguroso basado en tres principios fundamentales que la distinguen de otras formas de conocimiento
-                    sobre la mente.</p>
-                <a href="{{ '/sections/principios/' | relative_url }}" class="btn btn-outline">
-                    Explorar los Principios
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
+            <!-- Llamada a la acción -->
+            <main>
+                <a href="./articulo.html"
+                    class="inline-block bg-white text-gray-900 font-semibold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50">
+                    Leer el Artículo
                 </a>
-            </div>
+            </main>
+
         </div>
-    </section>
 
-    <!-- Call to Action -->
-    <section class="cta">
-        <div class="cta-content">
-            <h2>Comienza tu viaje hacia la comprensión científica de la mente</h2>
-            <p>Descubre cómo la psicología científica puede cambiar tu perspectiva sobre el comportamiento humano</p>
-            <a href="{{ '/sections/introduccion/' | relative_url }}" class="btn btn-primary btn-large">
-                Iniciar Lectura
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-            </a>
-        </div>
-    </section>
-</div>
+        <!-- Pie de página sutil -->
+        <footer class="absolute bottom-4 text-center text-sm text-white text-opacity-60">
+            <p>&copy; 2025. Un proyecto renacido con claridad y enfoque.</p>
+        </footer>
 
-<style>
-    /* Home-specific styles */
-    .home-layout {
-        margin-top: calc(-1 * var(--header-height));
-    }
+    </div>
 
-    .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-secondary) 100%);
-        padding: var(--header-height) var(--space-6) var(--space-6);
-    }
+</body>
 
-    .hero-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-16);
-        align-items: center;
-    }
-
-    @media (max-width: 768px) {
-        .hero-content {
-            grid-template-columns: 1fr;
-            gap: var(--space-8);
-            text-align: center;
-        }
-    }
-
-    .hero-title {
-        font-family: var(--font-family-serif);
-        font-size: var(--text-5xl);
-        font-weight: 700;
-        color: var(--color-text);
-        margin: 0 0 var(--space-6) 0;
-        line-height: 1.1;
-    }
-
-    .hero-subtitle {
-        font-family: var(--font-family-sans);
-        font-size: var(--text-xl);
-        color: var(--color-primary);
-        margin: 0 0 var(--space-4) 0;
-        font-weight: 500;
-    }
-
-    .hero-description {
-        font-size: var(--text-lg);
-        color: var(--color-text-secondary);
-        line-height: 1.7;
-        margin: 0 0 var(--space-8) 0;
-    }
-
-    .hero-actions {
-        display: flex;
-        gap: var(--space-4);
-        flex-wrap: wrap;
-    }
-
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--space-2);
-        padding: var(--space-4) var(--space-6);
-        border-radius: 8px;
-        text-decoration: none;
-        font-family: var(--font-family-sans);
-        font-weight: 500;
-        transition: all var(--transition-fast);
-        border: 2px solid transparent;
-    }
-
-    .btn-primary {
-        background: var(--color-primary);
-        color: white;
-    }
-
-    .btn-primary:hover {
-        background: var(--color-secondary);
-        transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-        background: var(--color-background);
-        color: var(--color-text);
-        border-color: var(--color-border);
-    }
-
-    .btn-secondary:hover {
-        background: var(--color-background-secondary);
-        border-color: var(--color-primary);
-    }
-
-    .btn-outline {
-        background: transparent;
-        color: var(--color-primary);
-        border-color: var(--color-primary);
-    }
-
-    .btn-outline:hover {
-        background: var(--color-primary);
-        color: white;
-    }
-
-    .btn-large {
-        padding: var(--space-6) var(--space-8);
-        font-size: var(--text-lg);
-    }
-
-    .brain-diagram {
-        position: relative;
-        width: 400px;
-        height: 400px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
-        border-radius: 50%;
-    }
-
-    .brain-section {
-        position: absolute;
-        text-align: center;
-        animation: float 3s ease-in-out infinite;
-    }
-
-    .brain-section:nth-child(1) {
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        animation-delay: 0s;
-    }
-
-    .brain-section:nth-child(2) {
-        top: 25%;
-        right: 15%;
-        animation-delay: 0.5s;
-    }
-
-    .brain-section:nth-child(3) {
-        top: 50%;
-        right: 10%;
-        transform: translateY(-50%);
-        animation-delay: 1s;
-    }
-
-    .brain-section:nth-child(4) {
-        bottom: 25%;
-        right: 15%;
-        animation-delay: 1.5s;
-    }
-
-    .brain-section:nth-child(5) {
-        bottom: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        animation-delay: 2s;
-    }
-
-    .brain-section:nth-child(6) {
-        bottom: 25%;
-        left: 15%;
-        animation-delay: 2.5s;
-    }
-
-    .brain-section:nth-child(7) {
-        top: 50%;
-        left: 10%;
-        transform: translateY(-50%);
-        animation-delay: 3s;
-    }
-
-    .brain-icon {
-        font-size: var(--text-3xl);
-        margin-bottom: var(--space-2);
-    }
-
-    .brain-label {
-        font-family: var(--font-family-sans);
-        font-size: var(--text-sm);
-        font-weight: 500;
-        color: var(--color-text-secondary);
-    }
-
-    @keyframes float {
-
-        0%,
-        100% {
-            transform: translateY(0px);
-        }
-
-        50% {
-            transform: translateY(-10px);
-        }
-    }
-
-    .features {
-        padding: var(--space-20) var(--space-6);
-        background: var(--color-background);
-    }
-
-    .features-content {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .section-header {
-        text-align: center;
-        margin-bottom: var(--space-16);
-    }
-
-    .section-header h2 {
-        font-family: var(--font-family-serif);
-        font-size: var(--text-4xl);
-        font-weight: 700;
-        color: var(--color-text);
-        margin: 0 0 var(--space-4) 0;
-    }
-
-    .section-header p {
-        font-size: var(--text-lg);
-        color: var(--color-text-secondary);
-        margin: 0;
-    }
-
-    .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: var(--space-8);
-    }
-
-    .feature-card {
-        text-align: center;
-        padding: var(--space-8);
-        background: var(--color-background-secondary);
-        border-radius: 12px;
-        transition: transform var(--transition-fast);
-    }
-
-    .feature-card:hover {
-        transform: translateY(-4px);
-    }
-
-    .feature-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 64px;
-        height: 64px;
-        background: var(--color-primary);
-        color: white;
-        border-radius: 50%;
-        margin: 0 auto var(--space-6) auto;
-    }
-
-    .feature-card h3 {
-        font-family: var(--font-family-sans);
-        font-size: var(--text-xl);
-        font-weight: 600;
-        color: var(--color-text);
-        margin: 0 0 var(--space-4) 0;
-    }
-
-    .feature-card p {
-        color: var(--color-text-secondary);
-        margin: 0;
-    }
-
-    .content-overview {
-        padding: var(--space-20) var(--space-6);
-        background: var(--color-background-secondary);
-    }
-
-    .overview-content {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .chapters-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: var(--space-6);
-    }
-
-    .chapter-card {
-        display: flex;
-        gap: var(--space-4);
-        padding: var(--space-6);
-        background: var(--color-background);
-        border-radius: 12px;
-        border: 1px solid var(--color-border);
-        transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    }
-
-    .chapter-card:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-lg);
-    }
-
-    .chapter-number {
-        font-family: var(--font-family-sans);
-        font-size: var(--text-2xl);
-        font-weight: 700;
-        color: var(--color-primary);
-        flex-shrink: 0;
-    }
-
-    .chapter-content h3 {
-        font-family: var(--font-family-sans);
-        font-size: var(--text-lg);
-        font-weight: 600;
-        color: var(--color-text);
-        margin: 0 0 var(--space-2) 0;
-    }
-
-    .chapter-content p {
-        color: var(--color-text-secondary);
-        margin: 0 0 var(--space-4) 0;
-        line-height: 1.6;
-    }
-
-    .chapter-link {
-        color: var(--color-primary);
-        text-decoration: none;
-        font-weight: 500;
-        font-size: var(--text-sm);
-        transition: color var(--transition-fast);
-    }
-
-    .chapter-link:hover {
-        color: var(--color-secondary);
-    }
-
-    .scientific-method {
-        padding: var(--space-20) var(--space-6);
-        background: var(--color-background);
-    }
-
-    .method-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-16);
-        align-items: center;
-    }
-
-    @media (max-width: 768px) {
-        .method-content {
-            grid-template-columns: 1fr;
-            gap: var(--space-8);
-        }
-    }
-
-    .method-diagram {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-6);
-    }
-
-    .method-step {
-        display: flex;
-        align-items: center;
-        gap: var(--space-4);
-        padding: var(--space-4);
-        background: var(--color-background-secondary);
-        border-radius: 8px;
-    }
-
-    .step-icon {
-        font-size: var(--text-2xl);
-        width: 48px;
-        text-align: center;
-    }
-
-    .method-step h3 {
-        font-family: var(--font-family-sans);
-        font-size: var(--text-lg);
-        font-weight: 600;
-        color: var(--color-text);
-        margin: 0 0 var(--space-1) 0;
-    }
-
-    .method-step p {
-        color: var(--color-text-secondary);
-        margin: 0;
-        font-size: var(--text-sm);
-    }
-
-    .method-text h2 {
-        font-family: var(--font-family-serif);
-        font-size: var(--text-3xl);
-        font-weight: 700;
-        color: var(--color-text);
-        margin: 0 0 var(--space-6) 0;
-    }
-
-    .method-text p {
-        color: var(--color-text-secondary);
-        margin: 0 0 var(--space-8) 0;
-        line-height: 1.7;
-    }
-
-    .cta {
-        padding: var(--space-20) var(--space-6);
-        background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-        color: white;
-        text-align: center;
-    }
-
-    .cta-content {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .cta h2 {
-        font-family: var(--font-family-serif);
-        font-size: var(--text-3xl);
-        font-weight: 700;
-        margin: 0 0 var(--space-6) 0;
-    }
-
-    .cta p {
-        font-size: var(--text-lg);
-        margin: 0 0 var(--space-8) 0;
-        opacity: 0.9;
-    }
-
-    .cta .btn-primary {
-        background: white;
-        color: var(--color-primary);
-    }
-
-    .cta .btn-primary:hover {
-        background: var(--color-background-secondary);
-        transform: translateY(-2px);
-    }
-</style>
+</html>
