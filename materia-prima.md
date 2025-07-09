@@ -38,7 +38,7 @@ Pública
 Repetible o replicable
 
 1. Empírica
-Significa que la psicología científica basa su conocimiento en la observación y la experiencia sistemática, y no en la mera opinión, intuición o anécdota. Es buscar respuestas de forma controlada y objetiva. Para apoyar una idea, no sirve:
+La psicología científica obtiene su conocimiento observando y experimentando de manera ordenada. No se basa en opiniones, intuiciones o historias personales. Busca respuestas de forma controlada y objetiva. Por eso, no basta con:
 
 Uno o varios ejemplos aislados.
 

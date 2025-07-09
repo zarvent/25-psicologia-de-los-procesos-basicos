@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería de la Mente: Un Viaje Visual v4</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* * =============================================
+         * ING. CATO DESIGN - SYSTEM CORE STYLES
+         * =============================================
+         * Base, tipografía y paleta de colores optimizada.
+         */
+        :root {
+            --color-background: #050608;
+            --color-text-primary: #e5e7eb;
+            --color-text-secondary: #9ca3af;
+            --color-accent-primary: #2563eb;
+            --color-accent-secondary: #60a5fa;
+            --color-danger: #ef4444;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            scroll-behavior: smooth;
+        }
+
+        /* * Fondo de gradiente animado.
+         * Más sutil para crear atmósfera sin distraer.
+         */
+        .gradient-bg {
+            background: linear-gradient(-45deg, #050608, #0c0a24, #1a1a3d, #050608);
+            background-size: 400% 400%;
+            animation: gradient-animation 25s ease infinite;
+        }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* * Glassmorphism Card Component v2.
+         * Refinado con borde degradado y transiciones mejoradas.
+         */
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            border-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05)) 1;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-image: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)) 1;
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* * Animaciones de entrada con IntersectionObserver.
+         * Transición más suave y natural.
+         */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* * Estilos de texto resaltado.
+         * Gradientes vibrantes para captar la atención.
+         */
+        .highlight-text {
+            background: linear-gradient(45deg, var(--color-accent-secondary), var(--color-accent-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .highlight-danger {
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            font-weight: 600;
+        }
+
+        /* * Diagrama de Ciclo Científico con SVG.
+         * Robusto, escalable y animado.
+         */
+        .cycle-diagram-svg {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+        }
+
+        .cycle-diagram-svg .node-shape {
+            fill: rgba(31, 41, 55, 0.7);
+            stroke: #4b5563;
+            stroke-width: 1.5;
+            transition: all 0.3s ease;
+        }
+
+        .cycle-diagram-svg .node-text {
+            fill: var(--color-text-primary);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .cycle-diagram-svg .node-group:hover .node-shape {
+            fill: rgba(55, 65, 81, 0.9);
+            stroke: var(--color-accent-secondary);
+            transform: scale(1.05);
+        }
+
+        .cycle-diagram-svg .arrow-path {
+            fill: none;
+            stroke: var(--color-accent-secondary);
+            stroke-width: 2.5;
+            stroke-dasharray: 150;
+            stroke-dashoffset: 150;
+            animation: draw-arrow 2s ease-out forwards;
+        }
+
+        .cycle-diagram-svg .arrow-head {
+            fill: var(--color-accent-secondary);
+            opacity: 0;
+            animation: show-head 0.5s ease-out forwards;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes draw-arrow {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes show-head {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="gradient-bg">
+
+    <div class="container mx-auto px-4 py-12 md:py-24">
+
+        <!-- ================================================== -->
+        <!-- SECCIÓN 1: Título e Introducción                   -->
+        <!-- ================================================== -->
+        <section class="min-h-screen flex flex-col justify-center text-center scroll-animate">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-wider">
+                Psicología de los <span class="highlight-text">Procesos Básicos</span>
+            </h1>
+            <p class="mt-6 md:text-xl max-w-3xl mx-auto text-gray-300">
+                La psicología de los procesos básicos es la disciplina científica que estudia la mente: qué hay en ella
+                y cómo funciona. Se enfoca en procesos como la percepción, la atención, la memoria, el pensamiento, el
+                lenguaje, la motivación y la emoción.
+            </p>
+        </section>
+
+        <!-- ================================================== -->
+        <!-- SECCIÓN 2: Explicaciones Pre-científicas           -->
+        <!-- ================================================== -->
+        <section class="py-20 scroll-animate">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+                Antes de la psicología como ciencia, <span class="highlight-text">ya se buscaban explicaciones</span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card rounded-2xl p-6 text-center">
+                    <img src="https://placehold.co/400x300/1a1a3d/e0e0e0?text=Explicación+Religiosa"
+                        alt="Ilustración simbólica de una figura dividida entre la luz y la oscuridad, representando la dualidad moral del alma."
+                        class="rounded-lg mb-4 aspect-video object-cover">
+                    <h3 class="text-xl font-bold mb-2">Explicaciones religiosas</h3>
+                    <p class="text-sm text-gray-400 flex-grow">Se hablaba del "alma" como el centro de nuestra conducta
+                        y moral, un campo de batalla entre el bien y el mal.</p>
+                </div>
+                <div class="card rounded-2xl p-6 text-center">
+                    <img src="https://placehold.co/400x300/1a1a3d/e0e0e0?text=Explicación+Filosófica"
+                        alt="Ilustración del carro alado de Platón, con un auriga (la razón) controlando dos caballos (emociones y pasiones)."
+                        class="rounded-lg mb-4 aspect-video object-cover">
+                    <h3 class="text-xl font-bold mb-2">Explicaciones filosóficas</h3>
+                    <p class="text-sm text-gray-400 flex-grow">Los grandes pensadores como Platón usaban comparaciones
+                        para explicar nuestros conflictos internos. Por ejemplo, comparaba la mente con un carro tirado
+                        por caballos: la razón es el conductor que debe controlar a los caballos salvajes, que
+                        representan nuestras emociones y pasiones.</p>
+                </div>
+                <div class="card rounded-2xl p-6 text-center">
+                    <img src="https://placehold.co/400x300/1a1a3d/e0e0e0?text=Explicación+Artística"
+                        alt="Ilustración abstracta de una magdalena que se disuelve en ondas de memoria y recuerdos."
+                        class="rounded-lg mb-4 aspect-video object-cover">
+                    <h3 class="text-xl font-bold mb-2">Explicaciones artísticas</h3>
+                    <p class="text-sm text-gray-400 flex-grow">El arte ha sido un vehículo para explorar la mente.
+                        Proust demostró cómo un simple aroma a magdalena podía desatar una cascada de recuerdos, y otros
+                        como Burroughs veían el lenguaje como "un virus del espacio exterior", algo que nos moldea desde
+                        fuera.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================== -->
+        <!-- SECCIÓN 3: Psicología del Sentido Común            -->
+        <!-- ================================================== -->
+        <section class="py-20 scroll-animate">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Psicología del <span class="highlight-text">Sentido
+                        Común</span></h2>
+                <p class="max-w-3xl mx-auto text-gray-300 mb-8">
+                    Esta no es una teoría científica, sino la forma en que todos, en nuestro día a día, intentamos ser
+                    psicólogos. Nos la pasamos creando teorías para explicar:
+                </p>
+                <ul class="text-lg text-gray-400 space-y-3 max-w-md mx-auto text-left list-none">
+                    <li class="flex items-center"><svg class="w-6 h-6 text-sky-400 mr-3" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>¿Por qué la gente hace lo que hace?</li>
+                    <li class="flex items-center"><svg class="w-6 h-6 text-sky-400 mr-3" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>¿Cómo piensan los demás?</li>
+                    <li class="flex items-center"><svg class="w-6 h-6 text-sky-400 mr-3" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>¿Qué sienten?</li>
+                    <li class="flex items-center"><svg class="w-6 h-6 text-sky-400 mr-3" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>¿Por qué hablan de esa manera?</li>
+                </ul>
+                <p class="max-w-3xl mx-auto text-gray-300 mt-8">
+                    Estas "teorías" se basan en nuestra experiencia personal y lo que hemos aprendido culturalmente. Son
+                    creencias implícitas, casi automáticas, que nos ayudan a entendernos y a navegar nuestras relaciones
+                    sociales.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================================================== -->
+        <!-- SECCIÓN 4: El Obstáculo Cognitivo                  -->
+        <!-- ================================================== -->
+        <section class="py-20 scroll-animate">
+            <div class="bg-gray-900/50 rounded-2xl p-8 md:p-12 border border-yellow-500/30">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">El <span
+                        class="highlight-danger">Obstáculo</span>: ¿Por qué nos cuesta aceptar la psicología científica?
+                </h2>
+                <p class="text-center text-gray-300 max-w-4xl mx-auto mb-10">
+                    Aquí hay una diferencia clave con otras ciencias. Si bien podemos tener una idea de cómo funciona la
+                    electricidad, si tenemos un problema, llamamos a un electricista. No confundimos nuestra opinión con
+                    el conocimiento técnico. Pero en psicología, nuestras ideas sobre la mente están muy conectadas con
+                    quiénes somos. Nos ayudan a vivir cada día. Por eso, cuesta más aceptar que nuestras creencias
+                    personales no son científicas.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center gap-8 mt-8">
+                    <div class="flex-1 text-center p-6 rounded-lg bg-black/30">
+                        <h3 class="text-2xl font-semibold mb-2 highlight-danger">Sesgo de Confirmación</h3>
+                        <p class="text-gray-400">La tendencia a buscar y valorar solo la información que confirma lo que
+                            ya creemos.</p>
+                    </div>
+                    <div class="flex-1 text-center p-6 rounded-lg bg-black/30">
+                        <h3 class="text-2xl font-semibold mb-2 highlight-danger">Disonancia Cognitiva</h3>
+                        <p class="text-gray-400">El malestar que sentimos cuando enfrentamos ideas que contradicen
+                            nuestras creencias.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================== -->
+        <!-- SECCIÓN 5: La Revolución Científica                -->
+        <!-- ================================================== -->
+        <section class="py-20 scroll-animate">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold my-4">Para que la psicología sea tomada <span
+                        class="highlight-text">en serio como ciencia</span></h2>
+                <p class="max-w-3xl mx-auto text-gray-300 mb-10">
+                    Los historiadores marcan el inicio de esto con Wilhelm Wundt, quien en 1876 fundó en Leipzig,
+                    Alemania, el primer laboratorio de psicología experimental. Su objetivo era estudiar la percepción y
+                    la memoria a través de un método basado en 3 principios clave:
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-left mt-12">
+                <div class="card rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-3">1. Empírica</h3>
+                    <p class="text-gray-400 flex-grow">La psicología científica obtiene su conocimiento observando y
+                        experimentando de manera ordenada. No se basa en opiniones, intuiciones o historias personales.
+                        Busca respuestas de forma controlada y objetiva. Como un detective, necesita pruebas: huellas,
+                        testimonios, videos, ADN.</p>
+                </div>
+                <div class="card rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-3">2. Pública</h3>
+                    <p class="text-gray-400 flex-grow">El conocimiento científico debe ser compartido y sometido al
+                        escrutinio de otros expertos. Los hallazgos se publican en revistas científicas con revisión por
+                        pares, donde otros científicos revisan críticamente el trabajo para asegurar su calidad.</p>
+                </div>
+                <div class="card rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-3">3. Replicable</h3>
+                    <p class="text-gray-400 flex-grow">Un solo estudio no es suficiente. Si otro grupo de investigadores
+                        sigue los mismos pasos, deberían llegar a resultados similares. Los métodos deben ser
+                        transparentes para permitir la replicación y, crucialmente, la falsificación (poner a prueba la
+                        teoría).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================== -->
+        <!-- SECCIÓN 5.5: El Ciclo de Investigación (SVG)       -->
+        <!-- ================================================== -->
+        <section class="py-20 scroll-animate">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">El <span class="highlight-text">Proceso de
+                    Investigación</span> Científica</h2>
+            <div class="cycle-diagram-svg">
+                <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Arrows -->
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" class="arrow-head" />
+                        </marker>
+                    </defs>
+                    <path d="M 150,45 Q 200,50 235,80" class="arrow-path" marker-end="url(#arrowhead)"></path>
+                    <path d="M 255,125 Q 250,180 220,215" class="arrow-path" marker-end="url(#arrowhead)"
+                        style="animation-delay: 0.2s;"></path>
+                    <path d="M 185,250 Q 150,265 115,250" class="arrow-path" marker-end="url(#arrowhead)"
+                        style="animation-delay: 0.4s;"></path>
+                    <path d="M 80,215 Q<seg_3>50,180 45,125" class="arrow-path" marker-end="url(#arrowhead)"
+                        style="animation-delay: 0.6s;"></path>
+                    <path d="M 65,80 Q 100,50 150,45" class="arrow-path" marker-end="url(#arrowhead)"
+                        style="animation-delay: 0.8s;"></path>
+
+                    <!-- Nodes -->
+                    <g class="node-group" style="transform-origin: center; transition: transform 0.3s ease;">
+                        <rect x="100" y="10" width="100" height="35" rx="8" class="node-shape"></rect>
+                        <text x="150" y="32" text-anchor="middle" class="node-text">Hipótesis</text>
+                    </g>
+                    <g class="node-group" style="transform-origin: center; transition: transform 0.3s ease;">
+                        <rect x="220" y="85" width="100" height="40" rx="8" class="node-shape"
+                            transform="rotate(15, 270, 105)"></rect>
+                        <text x="270" y="102" text-anchor="middle" class="node-text"
+                            transform="rotate(15, 270, 105)">Diseñar</text>
+                        <text x="270" y="117" text-anchor="middle" class="node-text"
+                            transform="rotate(15, 270, 105)">estudio</text>
+                    </g>
+                    <g class="node-group" style="transform-origin: center; transition: transform 0.3s ease;">
+                        <rect x="170" y="220" width="100" height="40" rx="8" class="node-shape"
+                            transform="rotate(-15, 220, 240)"></rect>
+                        <text x="220" y="237" text-anchor="middle" class="node-text"
+                            transform="rotate(-15, 220, 240)">Recoger</text>
+                        <text x="220" y="252" text-anchor="middle" class="node-text"
+                            transform="rotate(-15, 220, 240)">datos</text>
+                    </g>
+                    <g class="node-group" style="transform-origin: center; transition: transform 0.3s ease;">
+                        <rect x="30" y="220" width="100" height="40" rx="8" class="node-shape"
+                            transform="rotate(15, 80, 240)"></rect>
+                        <text x="80" y="237" text-anchor="middle" class="node-text"
+                            transform="rotate(15, 80, 240)">Analizar</text>
+                        <text x="80" y="252" text-anchor="middle" class="node-text"
+                            transform="rotate(15, 80, 240)">datos</text>
+                    </g>
+                    <g class="node-group" style="transform-origin: center; transition: transform 0.3s ease;">
+                        <rect x="-20" y="85" width="100" height="40" rx="8" class="node-shape"
+                            transform="rotate(-15, 30, 105)"></rect>
+                        <text x="30" y="102" text-anchor="middle" class="node-text"
+                            transform="rotate(-15, 30, 105)">Publicar /</text>
+                        <text x="30" y="117" text-anchor="middle" class="node-text"
+                            transform="rotate(-15, 30, 105)">Revisar</text>
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ================================================== -->
+        <!-- SECCIÓN 6: Conclusión                              -->
+        <!-- ================================================== -->
+        <section class="py-20 text-center scroll-animate">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">De la Teoría a la <span
+                    class="highlight-text">Práctica</span></h2>
+            <p class="max-w-3xl mx-auto text-gray-300 mb-10">
+                A lo largo de más de un siglo, la psicología básica ha creado modelos cada vez más complejos para
+                entender la mente. Y esto no es solo un ejercicio académico. Estos modelos son la base de intervenciones
+                en el mundo real:
+            </p>
+            <ul class="text-lg text-gray-400 space-y-3 inline-block text-left mb-10 list-none">
+                <li class="flex items-center"><span class="text-cyan-400 mr-3 font-bold">▹</span>Psicología clínica y
+                    tratamientos terapéuticos.</li>
+                <li class="flex items-center"><span class="text-cyan-400 mr-3 font-bold">▹</span>Educación y métodos de
+                    aprendizaje.</li>
+                <li class="flex items-center"><span class="text-cyan-400 mr-3 font-bold">▹</span>Trastornos
+                    neuropsicológicos.</li>
+                <li class="flex items-center"><span class="text-cyan-400 mr-3 font-bold">▹</span>Marketing y
+                    comportamiento del consumidor.</li>
+            </ul>
+            <div class="max-w-3xl mx-auto card rounded-2xl p-8 border-cyan-400/50">
+                <blockquote class="text-xl md:text-2xl italic text-white">
+                    "Comprender es saber qué hacer."
+                </blockquote>
+                <cite class="block mt-4 text-lg text-cyan-300 font-semibold">— Ludwig Wittgenstein</cite>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Standard IntersectionObserver for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.scroll-animate');
+            if (!animatedElements.length) return;
+
+            // The observer callback to add 'is-visible' class
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Optional: unobserve after animation to save resources
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            // Observer options: rootMargin can be used to trigger animation earlier/later
+            const observerOptions = {
+                threshold: 0.1,
+                // rootMargin: "0px 0px -50px 0px" // Example: trigger 50px sooner
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
