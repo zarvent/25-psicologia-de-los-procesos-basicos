@@ -1,0 +1,70 @@
+{
+  "name": "psicologia-procesos-basicos",
+  "version": "2.0.0",
+  "description": "Un libro digital interactivo sobre la psicología de los procesos básicos con arquitectura serverless moderna",
+  "main": "index.js",
+  "scripts": {
+    "dev": "bundle exec jekyll serve --livereload",
+    "build": "bundle exec jekyll build",
+    "test": "npm run lint && npm run test:html",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint assets/js/*.js --fix",
+    "lint:css": "stylelint assets/css/*.css --fix",
+    "lint:html": "htmlhint '*.html' '_layouts/*.html'",
+    "test:html": "htmlhint '*.html' '_layouts/*.html' '_site/**/*.html'",
+    "optimize": "npm run optimize:css && npm run optimize:js",
+    "optimize:css": "cleancss -o assets/css/main.min.css assets/css/main.css",
+    "optimize:js": "uglifyjs assets/js/main.js -o assets/js/main.min.js",
+    "lighthouse": "lighthouse http://localhost:4000 --output=json --output-path=lighthouse-report.json",
+    "deploy": "npm run build && npm run optimize",
+    "firebase:setup": "firebase init",
+    "firebase:deploy": "firebase deploy",
+    "precommit": "npm run lint && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/psicologia-procesos-basicos.git"
+  },
+  "keywords": [
+    "psychology",
+    "education",
+    "jekyll",
+    "github-pages",
+    "serverless",
+    "firebase",
+    "interactive-book",
+    "digital-learning"
+  ],
+  "author": "Academia de Psicología",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/psicologia-procesos-basicos/issues"
+  },
+  "homepage": "https://github.com/yourusername/psicologia-procesos-basicos#readme",
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "stylelint": "^15.10.0",
+    "stylelint-config-standard": "^34.0.0",
+    "htmlhint": "^1.1.4",
+    "lighthouse": "^11.0.0",
+    "clean-css-cli": "^5.6.0",
+    "uglify-js": "^3.17.4",
+    "firebase-tools": "^12.6.0",
+    "prettier": "^3.0.3"
+  },
+  "dependencies": {
+    "firebase": "^10.4.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

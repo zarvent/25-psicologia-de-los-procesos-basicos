@@ -122,6 +122,11 @@
       item.excerpt.toLowerCase().includes(query)
     );
 
+    // Track search query for analytics
+    if (window.AnalyticsManager) {
+      window.AnalyticsManager.trackSearchQuery(query, results.length);
+    }
+
     displaySearchResults(results, query);
   }
 
@@ -282,6 +287,28 @@
 
     const progress = Math.min(Math.max((scrollTop - articleTop + windowHeight / 2) / articleHeight, 0), 1);
     progressBar.style.width = `${progress * 100}%`;
+    
+    // Enhanced Analytics: Track reading progress in real-time
+    const currentSection = getCurrentSection();
+    const progressPercent = Math.round(progress * 100);
+    
+    // Track significant progress milestones
+    if (progressPercent > 0 && progressPercent % 25 === 0) {
+      if (window.AnalyticsManager) {
+        window.AnalyticsManager.trackReadingProgress(currentSection, progressPercent);
+      }
+    }
+    
+    // Store progress in localStorage for persistence
+    const progressData = {
+      section: currentSection,
+      progress: progressPercent,
+      timestamp: Date.now()
+    };
+    
+    let allProgress = JSON.parse(localStorage.getItem('readingProgress') || '{}');
+    allProgress[currentSection] = progressData;
+    localStorage.setItem('readingProgress', JSON.stringify(allProgress));
   }
 
   // ==========================================================================
@@ -436,66 +463,66 @@
   function initializeProgressBar() {
     const progressBar = document.getElementById('progress-bar');
     if (progressBar) {
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const percent = Math.min((scrollTop / docHeight) * 100, 100);
-            progressBar.style.width = percent + '%';
-        });
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = Math.min((scrollTop / docHeight) * 100, 100);
+        progressBar.style.width = percent + '%';
+      });
     }
-}
+  }
 
   // Initialize mobile menu
   function initializeMobileMenu() {
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.querySelector('.sidebar');
-    
+
     if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            document.body.classList.toggle('menu-open');
-        });
+      menuToggle.addEventListener('click', () => {
+        document.body.classList.toggle('menu-open');
+      });
     }
-    
+
     // Close menu when clicking outside
     document.addEventListener('click', (event) => {
-        if (document.body.classList.contains('menu-open') && 
-            !sidebar.contains(event.target) && 
-            !menuToggle.contains(event.target)) {
-            document.body.classList.remove('menu-open');
-        }
+      if (document.body.classList.contains('menu-open') &&
+        !sidebar.contains(event.target) &&
+        !menuToggle.contains(event.target)) {
+        document.body.classList.remove('menu-open');
+      }
     });
-}
+  }
 
   // Initialize page transitions
   function initializePageTransitions() {
     // Add loading animation to page content
     const content = document.querySelector('.main-content, .home-layout, .section-layout');
     if (content) {
-        content.style.opacity = '0';
-        content.style.transform = 'translateY(20px)';
-        
-        setTimeout(() => {
-            content.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            content.style.opacity = '1';
-            content.style.transform = 'translateY(0)';
-        }, 100);
+      content.style.opacity = '0';
+      content.style.transform = 'translateY(20px)';
+
+      setTimeout(() => {
+        content.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        content.style.opacity = '1';
+        content.style.transform = 'translateY(0)';
+      }, 100);
     }
-}
+  }
 
   // Highlight active section
   function highlightActiveSection() {
     const currentPath = window.location.pathname.replace(/\/$/, '');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     navLinks.forEach(link => {
-        const href = link.getAttribute('href').replace(/\/$/, '');
-        if (href === currentPath) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
+      const href = link.getAttribute('href').replace(/\/$/, '');
+      if (href === currentPath) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
     });
-}
+  }
 
   // ==========================================================================
   // GLOBAL FUNCTIONS
@@ -518,6 +545,18 @@
     document.addEventListener('DOMContentLoaded', initialize);
   } else {
     initialize();
+  }
+
+  /**
+   * Get current section name based on URL or page title
+   */
+  function getCurrentSection() {
+    const path = window.location.pathname;
+    const matches = path.match(/\/sections\/([^\/]+)/);
+    if (matches) {
+      return matches[1];
+    }
+    return document.title || 'home';
   }
 
 })();

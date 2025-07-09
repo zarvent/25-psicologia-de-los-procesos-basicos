@@ -1,6 +1,8 @@
 # Jekyll Configuration for Psicología de los Procesos Básicos
+# Advanced Serverless Architecture with Firebase Integration
+
 title: "Psicología de los Procesos Básicos"
-description: "Una guía completa sobre la disciplina científica que estudia la mente y sus procesos fundamentales"
+description: "Una guía completa sobre la disciplina científica que estudia la mente y sus procesos fundamentales - Ahora con analíticas en tiempo real"
 url: "https://zarvent.github.io/"
 baseurl: "/25-psicologia-de-los-procesos-basicos"
 
@@ -8,6 +10,12 @@ baseurl: "/25-psicologia-de-los-procesos-basicos"
 author:
   name: "Academia de Psicología"
   email: "contact@example.com"
+
+# Advanced Configuration
+version: "2.0.0"
+serverless: true
+firebase_enabled: true
+analytics_enabled: true
 
 # Build settings
 markdown: kramdown

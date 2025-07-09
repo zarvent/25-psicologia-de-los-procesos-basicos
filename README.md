@@ -1,6 +1,6 @@
 # Psicología de los Procesos Básicos
 
-Un libro digital interactivo sobre la ciencia de la mente, optimizado para GitHub Pages con Jekyll.
+Un libro digital interactivo sobre la ciencia de la mente, optimizado para GitHub Pages con Jekyll y arquitectura serverless moderna.
 
 ## 🚀 Quick Start
 
@@ -8,26 +8,39 @@ Un libro digital interactivo sobre la ciencia de la mente, optimizado para GitHu
 
 - **Ruby 3.0+** - Download from [RubyInstaller.org](https://rubyinstaller.org/) for Windows
 - **Jekyll and Bundler** - Install with `gem install jekyll bundler`
+- **Node.js 18+** - For development tools and linting
+- **Firebase Account** - For advanced analytics and real-time features
 
 ### Installation
 
 1. **Clone the repository**
+
    ```powershell
    git clone https://github.com/yourusername/psicologia-procesos-basicos.git
    cd psicologia-procesos-basicos
    ```
 
 2. **Install dependencies**
+
    ```powershell
    bundle install
+   npm install
    ```
 
-3. **Start the development server**
+3. **Configure Firebase (Optional)**
+
+   ```powershell
+   # Edit firebase-config.js with your Firebase project credentials
+   # Replace placeholder values with your actual Firebase config
+   ```
+
+4. **Start the development server**
+
    ```powershell
    bundle exec jekyll serve
    ```
 
-4. **Open in browser**
+5. **Open in browser**
    Navigate to `http://localhost:4000`
 
 > **📖 For detailed setup instructions, see [DEPLOYMENT.md](DEPLOYMENT.md)**
@@ -46,6 +59,8 @@ Este libro digital cubre los fundamentos de la psicología científica:
 
 ## ✨ Características
 
+### Core Features
+
 - **📱 Responsive Design** - Optimizado para desktop, tablet y móvil
 - **🌙 Modo Oscuro/Claro** - Toggle automático con preferencias del usuario
 - **🔍 Búsqueda Avanzada** - Búsqueda en tiempo real del contenido
@@ -55,6 +70,15 @@ Este libro digital cubre los fundamentos de la psicología científica:
 - **🎯 Accesibilidad** - Cumple estándares WCAG 2.1
 - **⚡ Performance** - Optimizado para carga rápida
 - **📤 Botones de Compartir** - Fácil compartir en redes sociales
+
+### Advanced Features (Serverless Architecture)
+
+- **🔥 Firebase Integration** - Real-time analytics and user feedback
+- **📊 Dynamic Analytics Dashboard** - Live reading statistics and popular sections
+- **💬 Interactive Feedback System** - User comments and ratings with real-time updates
+- **🔔 Smart Notifications** - Alert system for important updates
+- **🤖 Automated CI/CD** - GitHub Actions pipeline with quality checks
+- **📈 Performance Monitoring** - Core Web Vitals tracking and optimization
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -105,6 +129,7 @@ Este libro digital cubre los fundamentos de la psicología científica:
 7. **Guarda los cambios**
 
 El sitio estará disponible en:
+
 - Si renombraste: `https://tu-usuario.github.io/`
 - Si mantuviste el nombre: `https://tu-usuario.github.io/25-psicologia-de-los-procesos-basicos/`
 
@@ -255,14 +280,17 @@ google_analytics: "GA_TRACKING_ID"
 ### Problemas Comunes
 
 **Error 404 en GitHub Pages:**
+
 - Verifica que `baseurl` en `_config.yml` coincida con el nombre del repositorio
 - Asegúrate de que GitHub Pages esté habilitado en Settings
 
 **Estilos no cargan:**
+
 - Verifica la ruta en `_layouts/default.html`
 - Asegúrate de que `assets/css/main.css` existe
 
 **JavaScript no funciona:**
+
 - Abre DevTools y revisa errores en Console
 - Verifica que `assets/js/main.js` se carga correctamente
 

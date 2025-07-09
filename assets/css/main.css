@@ -395,11 +395,11 @@ body {
         position: relative;
         transform: none;
     }
-    
+
     .main-content {
         margin-left: var(--sidebar-width);
     }
-    
+
     .menu-toggle {
         display: none;
     }
@@ -880,7 +880,8 @@ body.menu-open::before {
 }
 
 /* Content Typography Enhancements */
-.content h1, .article-content h1 {
+.content h1,
+.article-content h1 {
     font-family: var(--font-serif);
     color: var(--color-primary);
     font-size: var(--text-3xl);
@@ -888,7 +889,8 @@ body.menu-open::before {
     line-height: 1.2;
 }
 
-.content h2, .article-content h2 {
+.content h2,
+.article-content h2 {
     font-family: var(--font-serif);
     color: var(--color-primary);
     font-size: var(--text-2xl);
@@ -897,7 +899,8 @@ body.menu-open::before {
     line-height: 1.3;
 }
 
-.content h3, .article-content h3 {
+.content h3,
+.article-content h3 {
     font-family: var(--font-serif);
     color: var(--color-primary);
     font-size: var(--text-xl);
@@ -906,7 +909,8 @@ body.menu-open::before {
     line-height: 1.4;
 }
 
-.content p, .article-content p {
+.content p,
+.article-content p {
     font-family: var(--font-sans);
     color: var(--color-text);
     line-height: 1.7;
@@ -915,36 +919,44 @@ body.menu-open::before {
 }
 
 /* Lists */
-.content ul, .content ol, .article-content ul, .article-content ol {
+.content ul,
+.content ol,
+.article-content ul,
+.article-content ol {
     margin-bottom: var(--space-4);
     padding-left: var(--space-6);
 }
 
-.content li, .article-content li {
+.content li,
+.article-content li {
     margin-bottom: var(--space-2);
     line-height: 1.6;
 }
 
 /* Links */
-.content a, .article-content a {
+.content a,
+.article-content a {
     color: var(--color-primary);
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: all var(--transition-fast);
 }
 
-.content a:hover, .article-content a:hover {
+.content a:hover,
+.article-content a:hover {
     color: var(--color-secondary);
     border-bottom-color: var(--color-secondary);
 }
 
 /* Strong and emphasis */
-.content strong, .article-content strong {
+.content strong,
+.article-content strong {
     color: var(--color-primary);
     font-weight: 600;
 }
 
-.content em, .article-content em {
+.content em,
+.article-content em {
     color: var(--color-text-secondary);
     font-style: italic;
 }

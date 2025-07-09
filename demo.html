@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo - Psicología de los Procesos Básicos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --color-primary: #005F73;
@@ -255,11 +257,11 @@
                 position: relative;
                 transform: none;
             }
-            
+
             .main-content {
                 margin-left: var(--sidebar-width);
             }
-            
+
             .menu-toggle {
                 display: none;
             }
@@ -294,6 +296,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="app-container">
         <!-- Progress Bar -->
@@ -363,8 +366,10 @@
         <main class="main-content fade-in" role="main">
             <div class="content">
                 <h1>Psicología de los Procesos Básicos</h1>
-                
-                <p>La psicología de los procesos básicos es la <strong>disciplina científica que estudia la mente</strong>: qué hay en ella y cómo funciona. Se enfoca en procesos como la percepción, la atención, la memoria, el pensamiento, el lenguaje, la motivación y la emoción.</p>
+
+                <p>La psicología de los procesos básicos es la <strong>disciplina científica que estudia la
+                        mente</strong>: qué hay en ella y cómo funciona. Se enfoca en procesos como la percepción, la
+                    atención, la memoria, el pensamiento, el lenguaje, la motivación y la emoción.</p>
 
                 <h2>Los Procesos Mentales Básicos</h2>
 
@@ -420,14 +425,15 @@
                 <h2>Enfoque Científico</h2>
 
                 <p>La psicología de los procesos básicos se distingue por su riguroso método científico, basado en:</p>
-                
+
                 <ul>
                     <li><strong>Evidencia empírica:</strong> Observación y experimentación sistemática</li>
                     <li><strong>Replicabilidad:</strong> Resultados que pueden ser confirmados</li>
                     <li><strong>Revisión por pares:</strong> Validación por la comunidad científica</li>
                 </ul>
 
-                <p>Esta aproximación científica garantiza que el conocimiento sea confiable y aplicable en diversos contextos.</p>
+                <p>Esta aproximación científica garantiza que el conocimiento sea confiable y aplicable en diversos
+                    contextos.</p>
             </div>
         </main>
     </div>
@@ -436,15 +442,15 @@
         // Mobile menu toggle
         const menuToggle = document.getElementById('menu-toggle');
         const sidebar = document.querySelector('.sidebar');
-        
+
         menuToggle.addEventListener('click', () => {
             document.body.classList.toggle('menu-open');
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', (event) => {
-            if (document.body.classList.contains('menu-open') && 
-                !sidebar.contains(event.target) && 
+            if (document.body.classList.contains('menu-open') &&
+                !sidebar.contains(event.target) &&
                 !menuToggle.contains(event.target)) {
                 document.body.classList.remove('menu-open');
             }
@@ -470,4 +476,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -20,6 +20,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/firebase-components.css' | relative_url }}">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
@@ -89,27 +90,28 @@
                 <ul class="nav-list">
                     {% assign sections = site.sections | sort: 'order' %}
                     {% for section in sections %}
-                        {% assign section_name = section.title | downcase %}
-                        {% if section_name contains 'sentido' %}
-                            {% assign icon = '💭' %}
-                        {% elsif section_name contains 'obstáculo' or section_name contains 'obstaculo' %}
-                            {% assign icon = '🚧' %}
-                        {% elsif section_name contains 'método' or section_name contains 'metodo' %}
-                            {% assign icon = '🔬' %}
-                        {% elsif section_name contains 'principio' %}
-                            {% assign icon = '⚖️' %}
-                        {% elsif section_name contains 'conclusión' or section_name contains 'conclusion' %}
-                            {% assign icon = '🎯' %}
-                        {% else %}
-                            {% assign icon = section.icon | default: '📄' %}
-                        {% endif %}
-                        
-                        <li class="nav-item">
-                            <a href="{{ section.url | relative_url }}" class="nav-link {% if page.url == section.url %}active{% endif %}">
-                                <span class="nav-icon">{{ icon }}</span>
-                                <span class="nav-text">{{ section.title }}</span>
-                            </a>
-                        </li>
+                    {% assign section_name = section.title | downcase %}
+                    {% if section_name contains 'sentido' %}
+                    {% assign icon = '💭' %}
+                    {% elsif section_name contains 'obstáculo' or section_name contains 'obstaculo' %}
+                    {% assign icon = '🚧' %}
+                    {% elsif section_name contains 'método' or section_name contains 'metodo' %}
+                    {% assign icon = '🔬' %}
+                    {% elsif section_name contains 'principio' %}
+                    {% assign icon = '⚖️' %}
+                    {% elsif section_name contains 'conclusión' or section_name contains 'conclusion' %}
+                    {% assign icon = '🎯' %}
+                    {% else %}
+                    {% assign icon = section.icon | default: '📄' %}
+                    {% endif %}
+
+                    <li class="nav-item">
+                        <a href="{{ section.url | relative_url }}"
+                            class="nav-link {% if page.url == section.url %}active{% endif %}">
+                            <span class="nav-icon">{{ icon }}</span>
+                            <span class="nav-text">{{ section.title }}</span>
+                        </a>
+                    </li>
                     {% endfor %}
                 </ul>
             </nav>
@@ -183,6 +185,7 @@
 
     <!-- Scripts -->
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script src="{{ '/firebase-config.js' | relative_url }}"></script>
 
     <!-- Analytics -->
     {% if site.google_analytics %}
