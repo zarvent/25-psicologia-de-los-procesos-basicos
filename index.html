@@ -4,83 +4,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentación | Psicología de los Procesos Básicos</title>
+    <title>cszv</title>
 
-    <!-- Tailwind CSS desde CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
     <style>
-        /* Aplicamos la fuente Inter como predeterminada */
         body {
             font-family: 'Inter', sans-serif;
         }
 
-        /* Pequeño efecto de gradiente animado para el fondo */
         .gradient-bg {
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
             }
 
             50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
+                opacity: 0.7;
             }
         }
     </style>
 </head>
 
-<body class="gradient-bg text-white">
-
-    <div class="min-h-screen flex flex-col items-center justify-center p-4">
-
-        <div
-            class="w-full max-w-3xl text-center bg-black bg-opacity-30 backdrop-blur-lg rounded-2xl p-8 md:p-16 shadow-2xl border border-white border-opacity-20">
-
-            <!-- Encabezado principal -->
-            <header>
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-                    Psicología de los Procesos Básicos
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-white bg-opacity-20 rounded-full mb-6">
+                    <i data-lucide="brain-circuit" class="w-8 h-8"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    Espacio Académico de Psicología
                 </h1>
-                <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-                    Un análisis profundo sobre los mecanismos fundamentales que rigen nuestra percepción, atención,
-                    memoria y aprendizaje.
+                <p class="text-xl md:text-2xl font-light opacity-90 max-w-3xl mx-auto">
+                    Explorando los fundamentos de la mente humana a través del análisis científico y la investigación
+                    académica
                 </p>
-            </header>
-
-            <!-- Separador visual -->
-            <div class="my-8 h-px bg-gray-400 w-1/4 mx-auto"></div>
-
-            <!-- Llamada a la acción -->
-            <main>
-                <a href="./articulo.html"
-                    class="inline-block bg-white text-gray-900 font-semibold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50">
-                    Leer el Artículo
-                </a>
-            </main>
-
+            </div>
         </div>
+    </header>
 
-        <!-- Pie de página sutil -->
-        <footer class="absolute bottom-4 text-center text-sm text-white text-opacity-60">
-            <p>&copy; 2025. Un proyecto renacido con claridad y enfoque.</p>
-        </footer>
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16">
+        <!-- Contenido Académico -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Contenido Académico</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded"></div>
+            </div>
 
-    </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Psicología de los Procesos Básicos -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <div class="flex items-center justify-center w-12 h-12 bg-purple-100 rounded-lg mb-6">
+                        <i data-lucide="brain" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                        Psicología de los Procesos Básicos
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Análisis profundo sobre percepción, atención, memoria y aprendizaje
+                    </p>
+                    <a href="psicologia-de-los-procesos-basicos/index-psicologia-de-los-procesos-basicos.html"
+                        class="inline-flex items-center text-purple-600 font-medium hover:text-purple-700 transition-colors">
+                        Explorar contenido
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
 
+                <!-- Placeholder para futuros contenidos -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover opacity-60">
+                    <div class="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-lg mb-6">
+                        <i data-lucide="plus" class="w-6 h-6 text-gray-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-400 mb-3">
+                        Próximo Contenido
+                    </h3>
+                    <p class="text-gray-400 mb-6">
+                        Nuevos temas en desarrollo
+                    </p>
+                    <span class="inline-flex items-center text-gray-400 font-medium">
+                        Próximamente
+                        <i data-lucide="clock" class="w-4 h-4 ml-2"></i>
+                    </span>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover opacity-60">
+                    <div class="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-lg mb-6">
+                        <i data-lucide="plus" class="w-6 h-6 text-gray-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-400 mb-3">
+                        Próximo Contenido
+                    </h3>
+                    <p class="text-gray-400 mb-6">
+                        Nuevos temas en desarrollo
+                    </p>
+                    <span class="inline-flex items-center text-gray-400 font-medium">
+                        Próximamente
+                        <i data-lucide="clock" class="w-4 h-4 ml-2"></i>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enlaces Externos -->
+        <section class="text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Sobre El Proyecto</h2>
+
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-2xl mx-auto">
+                <!-- GitHub Profile -->
+                <a href="https://github.com/zarvent" target="_blank"
+                    class="flex items-center bg-gray-900 text-white px-8 py-4 rounded-xl hover:bg-gray-800 transition-colors w-full sm:w-auto justify-center">
+                    <i data-lucide="github" class="w-5 h-5 mr-3"></i>
+                    Mi Perfil de GitHub
+                </a>
+
+                <!-- Repository Link -->
+                <a href="https://github.com/zarvent/25-psychology" target="_blank"
+                    class="flex items-center bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors w-full sm:w-auto justify-center">
+                    <i data-lucide="git-branch" class="w-5 h-5 mr-3"></i>
+                    Ver Repositorio
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center mb-4">
+                <i data-lucide="brain-circuit" class="w-6 h-6 mr-2"></i>
+                <span class="font-semibold">Sebastian Zambrana</span>
+            </div>
+            <p class="text-gray-400">
+                &copy; 2025 - Espacio donde sintetizo la informacion que estudio sobre la psicologia
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add pulse animation to first card
+            const firstCard = document.querySelector('.card-hover');
+            if (firstCard) {
+                firstCard.classList.add('pulse-animation');
+
+                // Remove pulse after 6 seconds
+                setTimeout(() => {
+                    firstCard.classList.remove('pulse-animation');
+                }, 6000);
+            }
+        });
+    </script>
 </body>
 
-</html>
+</html>mi espacio academico de psicologia

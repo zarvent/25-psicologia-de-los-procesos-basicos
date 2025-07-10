@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación | Psicología de los Procesos Básicos</title>
+
+    <!-- Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Aplicamos la fuente Inter como predeterminada */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Pequeño efecto de gradiente animado para el fondo */
+        .gradient-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body class="gradient-bg text-white">
+
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+
+        <div
+            class="w-full max-w-3xl text-center bg-black bg-opacity-30 backdrop-blur-lg rounded-2xl p-8 md:p-16 shadow-2xl border border-white border-opacity-20">
+
+            <!-- Encabezado principal -->
+            <header>
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4">
+                    Psicología de los Procesos Básicos
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+                    Un análisis profundo sobre los mecanismos fundamentales que rigen nuestra percepción, atención,
+                    memoria y aprendizaje.
+                </p>
+            </header>
+
+            <!-- Separador visual -->
+            <div class="my-8 h-px bg-gray-400 w-1/4 mx-auto"></div>
+
+            <!-- Llamada a la acción -->
+            <main>
+                <a href="psicologia-de-los-procesos-basicos.html"
+                    class="inline-block bg-white text-gray-900 font-semibold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50">
+                    Leer el Artículo
+                </a>
+            </main>
+
+        </div>
+
+        <!-- Pie de página sutil -->
+        <footer class="absolute bottom-4 text-center text-sm text-white text-opacity-60">
+            <p>&copy; 2025-07-08 Una sintesis del contenido que estudio </p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
